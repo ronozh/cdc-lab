@@ -1,0 +1,25 @@
+# Mental model
+#   Your Mac (host)
+#    └─ Docker Desktop (a Linux VM)
+#        ├─ container: cdc-postgres   (throwaway: can be deleted and recreated anytime)
+#        │    └─ /var/lib/postgresql/data  ← Postgres writes its files here
+#        │                 ▲ mounted
+#        └─ volume: cdc-lab_pgdata    (persistent: lives on independently of the container)
+#
+#   The container is the process; the volume is the disk. Delete the container and the data stays.
+
+services: # each entry = one container
+  postgres: # service name; other containers reach it at hostname "postgres"
+    image: postgres:17 # pinned major version; Debezium supports 17
+    container_name: cdc-postgres # fixed name, shown in `docker ps`
+    environment: # used only on first start (empty volume): creates user (superuser) + database
+      POSTGRES_USER: ${PG_USER} # ${...} filled from .env
+      POSTGRES_PASSWORD: ${PG_PASSWORD}
+      POSTGRES_DB: ${PG_DB}
+    ports:
+      - "5432:5432" # host:container. Mac localhost:5432 → container port 5432 (how the generator connects)
+    volumes: # USE volumes: <volume or path>:<path inside container>
+      - pgdata:/var/lib/postgresql/data # bare name = named volume (Docker-managed). "./pgdata:..." would be a bind mount (folder in this repo)
+
+volumes: # DECLARE named volumes (Docker creates them; real name gets the project prefix: cdc-lab_pgdata)
+  pgdata: # empty = default options. Kept on `docker compose down`; deleted by `down -v`
