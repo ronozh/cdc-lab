@@ -1,0 +1,24 @@
+{
+  "name": "pg-transaction-source",
+  "config": {
+    "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
+    "database.hostname": "postgres",
+    "database.port": "5432",
+    "database.user": "${env:PG_USER}",
+    "database.password": "${env:PG_PASSWORD}",
+    "database.dbname": "${env:PG_DB}",
+    "topic.prefix": "cdc",
+    "plugin.name": "pgoutput",
+    "slot.name": "debezium_transaction",
+    "publication.name": "dbz_transaction",
+    "publication.autocreate.mode": "filtered",
+    "table.include.list": "public.transaction",
+    "snapshot.mode": "initial",
+    "decimal.handling.mode": "string",
+    "tombstones.on.delete": "false",
+    "key.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "key.converter.schemas.enable": "false",
+    "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "value.converter.schemas.enable": "false"
+  }
+}
