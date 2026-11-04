@@ -1,0 +1,8 @@
+[project]
+name = "cdc-lab"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "psycopg[binary]>=3.3.8",
+    "python-dotenv>=1.2.4",
+]
