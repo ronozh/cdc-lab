@@ -74,7 +74,7 @@ resource "snowflake_grant_privileges_to_account_role" "database_usage" {
 resource "snowflake_grant_privileges_to_account_role" "transform_warehouse" {
   provider          = snowflake.securityadmin
   account_role_name = snowflake_account_role.this["CDC_TRANSFORM"].name
-  privileges        = ["USAGE", "OPERATE"] # OPERATE: suspend / resume dynamic table refreshes
+  privileges        = ["USAGE"] # dbt runs + dynamic table refreshes (the owner of a dynamic table can suspend / resume it)
   on_account_object {
     object_type = "WAREHOUSE"
     object_name = snowflake_warehouse.cdc.name

@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: silver_transaction
+    description: SILVER.TRANSACTION - latest state per transaction_id, last 7 days (dynamic Iceberg table).
+    columns:
+      - name: transaction_id
+        data_tests: [unique, not_null]
+      - name: status
+        data_tests:
+          - accepted_values:
+              arguments: {values: ['pending', 'completed', 'cancelled', 'refunded']}
+
+  - name: gold_transaction_enriched
+    description: GOLD.TRANSACTION_ENRICHED - silver + customer tier + product type (dynamic Iceberg table, lag 1 min).
+    columns:
+      - name: transaction_id
+        data_tests: [unique, not_null]
+      - name: customer_tier
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments: {values: ['platinum', 'gold', 'standard']}
+      - name: product_type
+        data_tests: [not_null]

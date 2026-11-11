@@ -25,4 +25,4 @@ docker run --rm --user root \
     --packages "org.apache.iceberg:iceberg-spark-runtime-3.5_2.12:$ICEBERG,org.apache.iceberg:iceberg-aws-bundle:$ICEBERG" \
     --conf spark.jars.ivy=/root/.ivy2 --conf spark.log.level=ERROR \
     /app/read_table.py "$TABLE" "$LIMIT" 2>&1 \
-  | grep -vE '^(Ivy|:: |\s+(found|confirmed|downloading|\[SUCCESSFUL|org.apache.iceberg)|\s*-+$)|resolving dependencies|artifacts copied|loading settings|retrieving ::|jars for the packages|added as a dependency|modules in use|^\s*$'
+  | grep -vE '^(Ivy|:: |\s+(found|confirmed|downloading|\[SUCCESSFUL|org.apache.iceberg)|\s*-+$)|resolving dependencies|artifacts copied|loading settings|retrieving ::|jars for the packages|added as a dependency|modules in use| INFO |^\s*$'

@@ -1,0 +1,1204 @@
+customer_id,first_name,last_name,tier,state,city
+1001,Dmitri,Pinto,platinum,ACT,Tuggeranong
+1002,Keanu,Gauthier,silver,QLD,Brisbane
+1003,Camila,Chen,silver,WA,Geraldton
+1004,Kenji,Krishnan,bronze,VIC,Melbourne
+1005,Mateo,Sinclair,bronze,SA,Adelaide
+1006,Diego,Bakker,bronze,TAS,Devonport
+1007,Emeka,Moreau,bronze,SA,Murray Bridge
+1008,Lars,Petrov,silver,TAS,Devonport
+1009,Elodie,Thornton,bronze,ACT,Tuggeranong
+1010,Sasha,Marchetti,bronze,WA,Broome
+1011,Mateo,Nakamura,silver,WA,Albany
+1012,Antonio,Clarke,bronze,QLD,Townsville
+1013,Leo,Garcia,bronze,NSW,Newcastle
+1014,Marcus,Jaganathan,silver,TAS,Launceston
+1015,Nadia,Kapoor,bronze,WA,Broome
+1016,Leilani,Fennimore,bronze,QLD,Brisbane
+1017,Carlos,Coelho,gold,NT,Alice Springs
+1018,Mohan,Petrov,bronze,WA,Albany
+1019,Rafael,Kovacs,silver,VIC,Mildura
+1020,Wren,Dubois,bronze,VIC,Bendigo
+1021,Hana,Hoffman,bronze,TAS,Devonport
+1022,Zara,Yamamoto,bronze,WA,Kalgoorlie
+1023,Talia,Boateng,bronze,SA,Murray Bridge
+1024,Felipe,Khan,bronze,TAS,Devonport
+1025,Genevieve,Costa,gold,TAS,Devonport
+1026,Camila,Lundgren,bronze,WA,Broome
+1027,Maeve,Sandoval,gold,SA,Mount Gambier
+1028,Esther,Sandoval,bronze,NT,Palmerston
+1029,Rafael,McAllister,bronze,SA,Port Augusta
+1030,Katarina,Lindqvist,bronze,WA,Geraldton
+1031,Ebele,Chakraborty,bronze,SA,Mount Gambier
+1032,Lucia,Hasegawa,silver,WA,Perth
+1033,Mira,Dabrowski,silver,QLD,Townsville
+1034,Emeka,Silva,silver,SA,Whyalla
+1035,Mahdi,Tanaka,silver,NT,Katherine
+1036,Juno,Navarro,silver,WA,Broome
+1037,Dmitri,Davies,silver,NT,Palmerston
+1038,Giulia,Ahmadi,gold,WA,Fremantle
+1039,Arjun,Leclerc,gold,WA,Perth
+1040,Yusuf,Laurent,gold,QLD,Toowoomba
+1041,Thandiwe,Tanaka,gold,WA,Albany
+1042,Uma,Nkemelu,bronze,SA,Adelaide
+1043,Felipe,Halloran,silver,VIC,Shepparton
+1044,Andrea,Reyes,bronze,NSW,Newcastle
+1045,Jasmin,Karlsson,bronze,QLD,Townsville
+1046,Olamide,Brennan,bronze,SA,Adelaide
+1047,Mateo,Stanton,bronze,SA,Murray Bridge
+1048,Antonio,Esposito,bronze,NT,Alice Springs
+1049,Bianca,Grimaldi,bronze,TAS,Burnie
+1050,Hassan,Yamamoto,gold,ACT,Tuggeranong
+1051,Jia,Chen,platinum,QLD,Cairns
+1052,Aaliyah,Dimitriou,bronze,NSW,Dubbo
+1053,Emeka,Gauthier,silver,ACT,Canberra
+1054,Marcus,Kimura,bronze,NSW,Orange
+1055,Amara,Esposito,gold,ACT,Canberra
+1056,Emeka,Ricci,silver,VIC,Ballarat
+1057,Rosa,Chowdhury,gold,NSW,Dubbo
+1058,Yusuf,Adeyemi,gold,ACT,Tuggeranong
+1059,Saoirse,Boateng,gold,WA,Albany
+1060,Selin,Jarvis,silver,NT,Palmerston
+1061,Xiulan,Wachowski,bronze,NT,Katherine
+1062,Sunil,Rasmussen,bronze,TAS,Launceston
+1063,Petra,Mbeki,gold,NT,Darwin
+1064,Oliver,Stanton,silver,NT,Darwin
+1065,Katarina,Pereira,platinum,ACT,Canberra
+1066,Kofi,Quintero,bronze,VIC,Mildura
+1067,Laila,Macpherson,silver,NSW,Sydney
+1068,Cheng,Thornton,silver,SA,Whyalla
+1069,Sina,Dubois,bronze,SA,Port Augusta
+1070,Ida,Rahman,silver,ACT,Gungahlin
+1071,Joachim,Vance,silver,QLD,Cairns
+1072,Ophelia,Takahashi,gold,NT,Katherine
+1073,Fatima,Takahashi,silver,ACT,Canberra
+1074,Ahmed,Gauthier,bronze,WA,Broome
+1075,Sina,Takahashi,bronze,ACT,Gungahlin
+1076,Aroha,Pahlavi,silver,VIC,Warrnambool
+1077,Alice,Fontaine,gold,SA,Mount Gambier
+1078,Juno,Moreau,bronze,NSW,Wollongong
+1079,Priya,Farrell,bronze,WA,Perth
+1080,Keanu,Trevelyan,silver,TAS,Launceston
+1081,Hassan,Cabrera,silver,NSW,Coffs Harbour
+1082,Ophelia,Donnelly,bronze,WA,Geraldton
+1083,Katarina,Coelho,silver,NT,Darwin
+1084,Emeka,Khan,silver,TAS,Devonport
+1085,Adrian,Varga,bronze,TAS,Hobart
+1086,Petra,Rahman,silver,TAS,Burnie
+1087,Jasmin,Nguyen,bronze,WA,Broome
+1088,Katarina,Boateng,bronze,SA,Port Augusta
+1089,Quentin,Fennimore,bronze,QLD,Brisbane
+1090,Emeka,Mendoza,silver,ACT,Tuggeranong
+1091,Maeve,Karlsson,bronze,VIC,Mildura
+1092,Rina,Bianchi,gold,VIC,Melbourne
+1093,Caitlin,Chen,bronze,ACT,Canberra
+1094,Elodie,Gallagher,silver,TAS,Devonport
+1095,Esther,Clarke,silver,NT,Katherine
+1096,Sunil,Clarke,bronze,VIC,Geelong
+1097,Javier,Holloway,gold,QLD,Rockhampton
+1098,Rohan,Suzuki,bronze,WA,Perth
+1099,Aroha,Sinclair,bronze,VIC,Bendigo
+1100,Genevieve,Nakamura,bronze,SA,Whyalla
+1101,Omar,Hendricks,silver,TAS,Burnie
+1102,Camila,Wojcik,bronze,WA,Fremantle
+1103,Ivan,Rossi,bronze,ACT,Gungahlin
+1104,Tamar,Kalani,bronze,WA,Perth
+1105,Priya,Lindqvist,bronze,QLD,Rockhampton
+1106,Giulia,Dabrowski,silver,QLD,Gold Coast
+1107,Darius,Rasmussen,bronze,VIC,Ballarat
+1108,Viktor,Farrell,silver,TAS,Burnie
+1109,Rohan,Pinto,bronze,ACT,Belconnen
+1110,Felipe,Sinclair,silver,NSW,Newcastle
+1111,Sofia,Whitaker,bronze,VIC,Geelong
+1112,Aditi,Stanton,gold,ACT,Belconnen
+1113,Dmitri,Petrov,bronze,VIC,Ballarat
+1114,Ludwig,Dalgleish,bronze,SA,Murray Bridge
+1115,Nuala,Brennan,bronze,WA,Fremantle
+1116,Soren,Bennett,platinum,NT,Alice Springs
+1117,Ludwig,McAllister,gold,ACT,Tuggeranong
+1118,Zofia,Lombardi,bronze,NT,Katherine
+1119,Jonas,Nguyen,bronze,ACT,Canberra
+1120,Blake,Mahmood,silver,ACT,Belconnen
+1121,Soren,Hendricks,bronze,SA,Mount Gambier
+1122,Manon,Hoffman,gold,SA,Port Augusta
+1123,Omar,Dubois,silver,TAS,Hobart
+1124,Antonio,Ivanov,silver,TAS,Devonport
+1125,Giulia,Fennimore,bronze,QLD,Brisbane
+1126,Priya,Adeyemi,bronze,WA,Broome
+1127,Isabela,Gruber,bronze,QLD,Gold Coast
+1128,Micheline,Barros,bronze,TAS,Hobart
+1129,Esther,Sharma,bronze,NT,Darwin
+1130,Anders,Duarte,bronze,QLD,Rockhampton
+1131,Bruno,Mahmood,silver,VIC,Shepparton
+1132,Genevieve,Sullivan,silver,NSW,Dubbo
+1133,Daniela,Jansen,gold,ACT,Tuggeranong
+1134,Kofi,Dabrowski,platinum,TAS,Burnie
+1135,Andrea,Barros,silver,TAS,Devonport
+1136,Reza,Adeyemi,bronze,NSW,Dubbo
+1137,Caitlin,Pinto,bronze,TAS,Burnie
+1138,Sina,Adeyemi,silver,NSW,Sydney
+1139,Javier,Oyelaran,bronze,NT,Katherine
+1140,Chloe,Petrov,bronze,NSW,Coffs Harbour
+1141,Reza,Stanton,gold,QLD,Gold Coast
+1142,Elias,Rahman,bronze,TAS,Hobart
+1143,Mateo,Barros,bronze,ACT,Tuggeranong
+1144,Imani,Laurent,silver,VIC,Mildura
+1145,Dmitri,Dimitriou,platinum,ACT,Canberra
+1146,Thandiwe,Adeyemi,silver,VIC,Warrnambool
+1147,Theo,Ramirez,bronze,NT,Palmerston
+1148,Aditi,Kaminski,platinum,NSW,Coffs Harbour
+1149,Jonas,Hoffman,bronze,VIC,Bendigo
+1150,Kenji,Chowdhury,bronze,QLD,Toowoomba
+1151,Micheline,Leclerc,gold,NT,Alice Springs
+1152,Nuala,Costa,silver,NSW,Wagga Wagga
+1153,Zeke,Boateng,silver,TAS,Hobart
+1154,Grace,Bergstrom,bronze,NT,Darwin
+1155,Sasha,Vance,gold,SA,Port Augusta
+1156,Esther,Vasquez,bronze,QLD,Gold Coast
+1157,Gabriel,Mbeki,silver,NSW,Sydney
+1158,Arjun,Vance,silver,VIC,Mildura
+1159,Zofia,Kimura,gold,WA,Albany
+1160,Saoirse,Holloway,bronze,VIC,Geelong
+1161,Tadeo,Lombardi,silver,QLD,Rockhampton
+1162,Petra,Varga,bronze,ACT,Belconnen
+1163,Zofia,Rahman,bronze,NSW,Newcastle
+1164,Ravi,Cabrera,bronze,SA,Port Augusta
+1165,Paloma,Sasaki,bronze,WA,Perth
+1166,Arjun,Novak,bronze,TAS,Burnie
+1167,Theo,Martins,bronze,SA,Adelaide
+1168,Sunil,Mendoza,silver,NT,Alice Springs
+1169,Mateo,Navarro,bronze,NSW,Coffs Harbour
+1170,Anika,Petrov,silver,NT,Darwin
+1171,Daniela,Wojcik,bronze,QLD,Rockhampton
+1172,Nuala,Donnelly,bronze,SA,Whyalla
+1173,Tariq,Zielinski,gold,SA,Murray Bridge
+1174,Malia,Malik,silver,SA,Murray Bridge
+1175,Ewan,Grimaldi,platinum,NT,Darwin
+1176,Ochieng,Sandoval,bronze,NSW,Coffs Harbour
+1177,Adrian,Cavanagh,platinum,ACT,Belconnen
+1178,Rosa,Gallagher,bronze,ACT,Belconnen
+1179,Nadia,Kaminski,gold,QLD,Townsville
+1180,Fatima,Fitzgerald,bronze,SA,Murray Bridge
+1181,Adrian,Bianchi,bronze,VIC,Shepparton
+1182,Elias,Alvarez,bronze,TAS,Hobart
+1183,Rhys,Beauchamp,bronze,TAS,Launceston
+1184,Laila,Bergstrom,gold,NSW,Albury
+1185,Rina,Varga,gold,WA,Bunbury
+1186,Emiko,Oyelaran,bronze,QLD,Rockhampton
+1187,Pedro,Dalgleish,gold,QLD,Mackay
+1188,Zofia,Nakamura,bronze,VIC,Ballarat
+1189,Ruben,Torres,gold,NSW,Dubbo
+1190,Ingrid,Papadopoulos,bronze,SA,Port Augusta
+1191,Emeka,Marchetti,gold,WA,Bunbury
+1192,Anders,Ibrahim,bronze,TAS,Burnie
+1193,Kenji,Donnelly,bronze,NT,Katherine
+1194,Petra,Fairweather,bronze,WA,Fremantle
+1195,Thandiwe,Lundgren,bronze,QLD,Brisbane
+1196,Rafael,Santos,bronze,WA,Kalgoorlie
+1197,Thandiwe,Kaminski,bronze,VIC,Melbourne
+1198,Ewan,Vance,bronze,NSW,Albury
+1199,Aditi,Mbeki,bronze,ACT,Canberra
+1200,Carlos,Brennan,silver,NT,Alice Springs
+1201,Kalinda,Walsh,bronze,SA,Port Augusta
+1202,Kalinda,Vasquez,bronze,NSW,Newcastle
+1203,Aditi,Sinclair,bronze,ACT,Belconnen
+1204,Mei,Hamilton,bronze,TAS,Launceston
+1205,Tamar,Suzuki,silver,TAS,Devonport
+1206,Arjun,Macpherson,silver,TAS,Launceston
+1207,Diego,Delacroix,platinum,VIC,Bendigo
+1208,Emeka,Mikkelsen,bronze,TAS,Launceston
+1209,Rohan,Sandoval,bronze,TAS,Devonport
+1210,Kofi,Petrov,gold,TAS,Devonport
+1211,Jonas,Villanueva,bronze,SA,Whyalla
+1212,Mahdi,Whitaker,bronze,VIC,Mildura
+1213,Yara,Aoki,silver,ACT,Canberra
+1214,Adrian,Ricci,bronze,QLD,Townsville
+1215,Hina,Novak,bronze,QLD,Cairns
+1216,Cormac,Schneider,silver,QLD,Cairns
+1217,Soren,Karlsson,silver,ACT,Canberra
+1218,Ingrid,Gilmore,gold,WA,Bunbury
+1219,Ingrid,Kaczmarek,bronze,QLD,Townsville
+1220,Zeke,Fairweather,silver,QLD,Brisbane
+1221,Nadia,Whitaker,bronze,SA,Mount Gambier
+1222,Rina,Krishnan,silver,ACT,Canberra
+1223,Jae,Tanaka,bronze,NSW,Albury
+1224,Kalinda,Mbeki,bronze,QLD,Cairns
+1225,Omar,Hamilton,gold,NT,Katherine
+1226,Soren,Holloway,gold,TAS,Hobart
+1227,Tariq,Zhang,bronze,SA,Murray Bridge
+1228,Cormac,Keating,bronze,WA,Bunbury
+1229,Bianca,Petrov,bronze,QLD,Townsville
+1230,Yusuf,Whitaker,bronze,NSW,Dubbo
+1231,Alice,Pinto,gold,WA,Fremantle
+1232,Reza,Pereira,silver,ACT,Belconnen
+1233,Nadia,Torres,gold,QLD,Rockhampton
+1234,Thandiwe,Rossi,bronze,TAS,Devonport
+1235,Finn,Hoffman,bronze,NSW,Wollongong
+1236,Ewan,Sasaki,bronze,TAS,Devonport
+1237,Ruben,Keating,bronze,SA,Adelaide
+1238,Gabriel,Laurent,silver,QLD,Toowoomba
+1239,Sasha,Quintero,bronze,ACT,Belconnen
+1240,Cormac,Quintero,gold,ACT,Belconnen
+1241,Imani,Fairweather,bronze,ACT,Tuggeranong
+1242,Kofi,Bakker,bronze,QLD,Mackay
+1243,Rhys,Fontaine,bronze,SA,Mount Gambier
+1244,Ruben,Wachowski,bronze,NSW,Wagga Wagga
+1245,Kai,Mikkelsen,bronze,NSW,Orange
+1246,Darius,Halloran,bronze,QLD,Brisbane
+1247,Zainab,Sokolov,bronze,WA,Fremantle
+1248,Kenji,Bergstrom,bronze,VIC,Shepparton
+1249,Bruno,Sinclair,silver,WA,Kalgoorlie
+1250,Aditi,Dalgleish,bronze,TAS,Launceston
+1251,Quentin,Laurent,bronze,NT,Alice Springs
+1252,Micheline,Rasmussen,gold,QLD,Mackay
+1253,Thandiwe,Boateng,bronze,TAS,Launceston
+1254,Harriet,Fujimoto,gold,TAS,Devonport
+1255,Quentin,Sasaki,bronze,VIC,Mildura
+1256,Leo,Pereira,platinum,NSW,Wollongong
+1257,Ida,Hoffman,silver,VIC,Shepparton
+1258,Alice,Quintero,bronze,TAS,Burnie
+1259,Sofia,Gallagher,platinum,SA,Murray Bridge
+1260,Ludwig,Pinto,silver,VIC,Mildura
+1261,Mei,Karlsson,bronze,WA,Broome
+1262,Khalid,Martins,bronze,NSW,Wollongong
+1263,Lachlan,Boateng,bronze,QLD,Rockhampton
+1264,Rohan,Sasaki,silver,NT,Alice Springs
+1265,Uma,Ghosh,platinum,WA,Broome
+1266,Chloe,Ramirez,bronze,TAS,Hobart
+1267,Soren,Fairweather,bronze,WA,Bunbury
+1268,Katarina,Ahmadi,bronze,SA,Port Augusta
+1269,Mira,Gilmore,silver,ACT,Tuggeranong
+1270,Yara,Hoffman,gold,NT,Katherine
+1271,Diego,Trevelyan,bronze,NT,Alice Springs
+1272,Ophelia,Khan,silver,NT,Darwin
+1273,Thandiwe,Pereira,platinum,NT,Palmerston
+1274,Oliver,Reyes,bronze,NSW,Newcastle
+1275,Cormac,Cavanagh,silver,NSW,Newcastle
+1276,Theo,Oyelaran,platinum,QLD,Gold Coast
+1277,Felipe,Sasaki,silver,WA,Fremantle
+1278,Mira,Gilmore,gold,TAS,Devonport
+1279,Saoirse,Coelho,bronze,ACT,Tuggeranong
+1280,Ingrid,Mikkelsen,bronze,QLD,Brisbane
+1281,Genevieve,Andersen,silver,SA,Adelaide
+1282,Kalinda,Rahman,silver,WA,Fremantle
+1283,Sasha,Santos,bronze,QLD,Rockhampton
+1284,Ibrahim,Khan,bronze,WA,Broome
+1285,Andrea,Novak,silver,SA,Murray Bridge
+1286,Esther,Zhang,bronze,VIC,Melbourne
+1287,Adrian,Jarvis,bronze,NSW,Orange
+1288,Adrian,Navarro,silver,ACT,Tuggeranong
+1289,Alejandro,Walsh,bronze,VIC,Warrnambool
+1290,Anika,Schneider,silver,TAS,Launceston
+1291,Astrid,Park,gold,NSW,Dubbo
+1292,Rosa,Lundgren,bronze,WA,Fremantle
+1293,Thandiwe,Boateng,gold,SA,Mount Gambier
+1294,Rhys,Kimura,silver,NSW,Orange
+1295,Joachim,Torres,bronze,SA,Murray Bridge
+1296,Arjun,Vasquez,silver,NT,Darwin
+1297,Ingrid,Sokolov,platinum,VIC,Warrnambool
+1298,Rohan,Sokolov,silver,NT,Darwin
+1299,Rohan,Sinclair,gold,WA,Albany
+1300,Ebele,Lombardi,silver,WA,Geraldton
+1301,Anders,Marchetti,bronze,TAS,Devonport
+1302,Micheline,Andersen,bronze,WA,Fremantle
+1303,Ivan,Zielinski,bronze,ACT,Canberra
+1304,Adrian,Novak,bronze,QLD,Brisbane
+1305,Mohan,Silva,bronze,QLD,Townsville
+1306,Jacinta,Kovacs,bronze,WA,Bunbury
+1307,Chloe,Fujimoto,bronze,TAS,Devonport
+1308,Astrid,Mikkelsen,bronze,SA,Port Augusta
+1309,Lars,Navarro,bronze,TAS,Burnie
+1310,Hassan,Krishnan,bronze,VIC,Melbourne
+1311,Malia,Yilmaz,silver,SA,Port Augusta
+1312,Kai,Oyelaran,bronze,NT,Katherine
+1313,Thandiwe,Kapoor,silver,VIC,Geelong
+1314,Micheline,Boateng,gold,WA,Perth
+1315,Caitlin,Gilmore,platinum,WA,Bunbury
+1316,Sina,Krishnan,silver,ACT,Belconnen
+1317,Josephine,Stanton,bronze,TAS,Burnie
+1318,Zainab,Ramirez,bronze,VIC,Ballarat
+1319,Mateo,Walsh,bronze,VIC,Melbourne
+1320,Micheline,Suzuki,bronze,NSW,Wagga Wagga
+1321,Rosa,Cabrera,silver,VIC,Geelong
+1322,Diego,Pinto,silver,ACT,Gungahlin
+1323,Yusuf,Takahashi,platinum,SA,Whyalla
+1324,Pedro,Navarro,gold,TAS,Hobart
+1325,Talia,Pahlavi,bronze,ACT,Belconnen
+1326,Ahmed,Mikkelsen,bronze,NT,Palmerston
+1327,Anika,Kaur,bronze,NT,Katherine
+1328,Mei,Grimaldi,silver,WA,Bunbury
+1329,Ochieng,Kaczmarek,bronze,SA,Adelaide
+1330,Blake,Villanueva,bronze,TAS,Burnie
+1331,Elodie,Silva,bronze,VIC,Mildura
+1332,Rosa,Novak,gold,NT,Palmerston
+1333,Jia,Donnelly,bronze,NSW,Sydney
+1334,Reza,Boateng,silver,SA,Port Augusta
+1335,Dechen,Tanaka,silver,NT,Palmerston
+1336,Ravi,Boateng,bronze,NT,Palmerston
+1337,Quentin,Park,silver,WA,Broome
+1338,Imani,Walsh,bronze,NSW,Orange
+1339,Bianca,Silva,bronze,QLD,Toowoomba
+1340,Javier,Ivanov,silver,ACT,Canberra
+1341,Camila,Barros,bronze,ACT,Canberra
+1342,Darius,Ricci,bronze,NT,Palmerston
+1343,Soren,Novak,bronze,SA,Whyalla
+1344,Amelia,Sharma,bronze,NSW,Newcastle
+1345,Ida,Trevelyan,gold,VIC,Shepparton
+1346,Rohan,Dabrowski,bronze,WA,Bunbury
+1347,Jia,Whitaker,bronze,WA,Albany
+1348,Ludwig,Malik,bronze,TAS,Launceston
+1349,Finn,Fujimoto,bronze,VIC,Warrnambool
+1350,Clara,Adeyemi,silver,VIC,Melbourne
+1351,Esther,Park,bronze,ACT,Canberra
+1352,Aaliyah,Lindqvist,bronze,ACT,Gungahlin
+1353,Selin,Sinclair,bronze,NSW,Dubbo
+1354,Ophelia,Pinto,silver,TAS,Launceston
+1355,Lars,Gauthier,silver,VIC,Geelong
+1356,Emiko,Suzuki,silver,NSW,Sydney
+1357,Ophelia,Dabrowski,silver,ACT,Belconnen
+1358,Xiulan,Gruber,bronze,NSW,Orange
+1359,Astrid,Gauthier,bronze,NT,Darwin
+1360,Mei,Mbeki,bronze,ACT,Tuggeranong
+1361,Eleni,Marchetti,bronze,NSW,Orange
+1362,Elodie,Delacroix,bronze,NSW,Sydney
+1363,Laila,Fairweather,silver,TAS,Launceston
+1364,Mei,Kimura,silver,WA,Bunbury
+1365,Adrian,Sandoval,bronze,WA,Bunbury
+1366,Rohan,Ramirez,gold,TAS,Launceston
+1367,Rohan,Torres,gold,QLD,Cairns
+1368,Rina,Bennett,gold,SA,Port Augusta
+1369,Rosa,Fontaine,platinum,VIC,Bendigo
+1370,Isabela,Ghosh,bronze,VIC,Bendigo
+1371,Omar,Donnelly,bronze,NT,Darwin
+1372,Mahdi,Ibrahim,bronze,VIC,Ballarat
+1373,Nadia,Macpherson,bronze,WA,Fremantle
+1374,Malia,Bergstrom,silver,NT,Darwin
+1375,Ibrahim,Malik,bronze,ACT,Tuggeranong
+1376,Ingrid,Fujimoto,bronze,TAS,Burnie
+1377,Jonas,Lombardi,bronze,NT,Alice Springs
+1378,Cormac,Ghosh,bronze,WA,Albany
+1379,Uma,Dubois,bronze,WA,Kalgoorlie
+1380,Nuala,Reyes,silver,TAS,Hobart
+1381,Khalid,Fujimoto,bronze,NT,Alice Springs
+1382,Emeka,Dimitriou,silver,VIC,Geelong
+1383,Chloe,Gilmore,bronze,NSW,Coffs Harbour
+1384,Alice,Boateng,silver,SA,Murray Bridge
+1385,Rina,Pahlavi,gold,SA,Adelaide
+1386,Rosa,Ibrahim,bronze,NT,Darwin
+1387,Esther,Bergstrom,silver,NSW,Albury
+1388,Lian,Papadopoulos,silver,WA,Kalgoorlie
+1389,Jae,Clarke,silver,NT,Alice Springs
+1390,Ida,Suzuki,gold,ACT,Belconnen
+1391,Mahdi,Torres,bronze,WA,Broome
+1392,Cheng,Zielinski,silver,NSW,Orange
+1393,Rhys,Farrell,bronze,TAS,Hobart
+1394,Esther,Krishnan,bronze,TAS,Hobart
+1395,Aditi,Kalani,bronze,SA,Port Augusta
+1396,Wren,Reyes,bronze,QLD,Cairns
+1397,Aaliyah,Rafferty,platinum,NT,Darwin
+1398,Lachlan,Oyelaran,bronze,NSW,Newcastle
+1399,Aroha,Bergstrom,gold,NT,Alice Springs
+1400,Talia,Stanton,platinum,ACT,Tuggeranong
+1401,Malia,Clarke,silver,NT,Palmerston
+1402,Jacinta,Jarvis,bronze,SA,Adelaide
+1403,Imani,Krishnan,bronze,ACT,Belconnen
+1404,Daniela,Kaczmarek,silver,VIC,Melbourne
+1405,Leo,Sasaki,bronze,QLD,Toowoomba
+1406,Rina,Nakamura,bronze,SA,Adelaide
+1407,Joachim,Baptiste,silver,ACT,Gungahlin
+1408,Theo,Park,bronze,WA,Fremantle
+1409,Hassan,Coelho,silver,VIC,Mildura
+1410,Priya,Fontaine,gold,ACT,Belconnen
+1411,Mateo,Mendoza,platinum,ACT,Canberra
+1412,Clara,Garcia,silver,NT,Darwin
+1413,Ludwig,Boateng,platinum,NT,Darwin
+1414,Hamish,Ibrahim,platinum,ACT,Tuggeranong
+1415,Zofia,Fairweather,silver,TAS,Burnie
+1416,Ravi,Gauthier,silver,WA,Albany
+1417,Noor,Malik,bronze,NT,Katherine
+1418,Xiulan,Clarke,silver,NT,Katherine
+1419,Noor,Dimitriou,bronze,WA,Broome
+1420,Aditi,Donnelly,silver,SA,Murray Bridge
+1421,Jacinta,Esposito,bronze,TAS,Hobart
+1422,Kofi,Dabrowski,bronze,SA,Mount Gambier
+1423,Tadeo,Rasmussen,bronze,QLD,Rockhampton
+1424,Ravi,Coelho,silver,ACT,Gungahlin
+1425,Hina,Papadopoulos,bronze,WA,Geraldton
+1426,Malia,Bakker,gold,ACT,Belconnen
+1427,Omar,Malik,bronze,NSW,Albury
+1428,Aroha,Arnold,platinum,QLD,Gold Coast
+1429,Jonas,Gruber,bronze,NSW,Orange
+1430,Reza,Varga,bronze,WA,Kalgoorlie
+1431,Mei,Halloran,bronze,QLD,Townsville
+1432,Joachim,Chen,gold,NT,Palmerston
+1433,Isabela,Gilmore,bronze,NSW,Albury
+1434,Pedro,Kaur,silver,TAS,Burnie
+1435,Yusuf,Rossi,gold,SA,Mount Gambier
+1436,Javier,Mbeki,bronze,WA,Broome
+1437,Rosa,Reyes,bronze,WA,Albany
+1438,Astrid,Pinto,gold,QLD,Toowoomba
+1439,Jae,Eriksen,bronze,VIC,Ballarat
+1440,Bianca,Bergstrom,silver,WA,Bunbury
+1441,Laila,Moreau,bronze,ACT,Canberra
+1442,Alejandro,Ramirez,bronze,ACT,Tuggeranong
+1443,Joachim,Wachowski,gold,WA,Kalgoorlie
+1444,Uma,Gruber,gold,NSW,Newcastle
+1445,Paloma,Macpherson,gold,NSW,Newcastle
+1446,Quentin,Dabrowski,bronze,VIC,Mildura
+1447,Cheng,Moreau,bronze,QLD,Toowoomba
+1448,Diego,Ghosh,silver,QLD,Brisbane
+1449,Sina,Mendoza,bronze,ACT,Belconnen
+1450,Soren,Sokolov,gold,VIC,Ballarat
+1451,Jamal,Rossi,bronze,VIC,Melbourne
+1452,Juno,Ridgeway,gold,SA,Whyalla
+1453,Jae,Ahmadi,bronze,WA,Albany
+1454,Cormac,Oyelaran,silver,WA,Bunbury
+1455,Yusuf,Takahashi,bronze,TAS,Hobart
+1456,Gabriel,Gallagher,silver,VIC,Bendigo
+1457,Ivan,Schneider,gold,WA,Perth
+1458,Katarina,Delacroix,silver,TAS,Hobart
+1459,Sina,Reyes,gold,VIC,Ballarat
+1460,Rohan,Trevelyan,platinum,ACT,Gungahlin
+1461,Rina,Schneider,silver,VIC,Ballarat
+1462,Kiara,Eriksen,bronze,QLD,Toowoomba
+1463,Harriet,Ahmadi,silver,VIC,Geelong
+1464,Ravi,Bakker,bronze,WA,Perth
+1465,Marcus,Jarvis,bronze,NSW,Orange
+1466,Mei,Cabrera,bronze,QLD,Mackay
+1467,Camila,Hamilton,bronze,WA,Broome
+1468,Isabela,Villanueva,bronze,NSW,Albury
+1469,Mohan,Fairweather,bronze,QLD,Rockhampton
+1470,Cormac,Dimitriou,bronze,ACT,Tuggeranong
+1471,Darius,Esposito,bronze,SA,Port Augusta
+1472,Lucia,Gruber,silver,WA,Broome
+1473,Lachlan,Dabrowski,bronze,QLD,Brisbane
+1474,Pedro,Gruber,silver,NSW,Wollongong
+1475,Ludwig,Hendricks,bronze,TAS,Burnie
+1476,Khalid,Park,bronze,NT,Darwin
+1477,Ahmed,Schneider,bronze,VIC,Shepparton
+1478,Wren,Coelho,bronze,QLD,Rockhampton
+1479,Aisha,Aoki,gold,SA,Murray Bridge
+1480,Ebele,Fitzgerald,silver,ACT,Canberra
+1481,Priya,Rahman,bronze,VIC,Melbourne
+1482,Jae,Ricci,bronze,SA,Mount Gambier
+1483,Khalid,Halloran,bronze,ACT,Tuggeranong
+1484,Leilani,Arnold,bronze,VIC,Shepparton
+1485,Ravi,Moreau,bronze,QLD,Brisbane
+1486,Khalid,Sokolov,bronze,NT,Palmerston
+1487,Sina,Duarte,silver,TAS,Hobart
+1488,Ochieng,Ahmadi,bronze,NSW,Dubbo
+1489,Omar,Kovacs,bronze,VIC,Warrnambool
+1490,Rohan,Cavanagh,bronze,SA,Mount Gambier
+1491,Cormac,Mikkelsen,platinum,TAS,Burnie
+1492,Fatima,Barros,silver,NSW,Orange
+1493,Mira,Fujimoto,gold,SA,Adelaide
+1494,Astrid,Santos,bronze,NSW,Wagga Wagga
+1495,Ibrahim,Fitzgerald,bronze,SA,Whyalla
+1496,Joachim,Navarro,bronze,NSW,Newcastle
+1497,Isabela,Nguyen,bronze,ACT,Belconnen
+1498,Alejandro,Ahmadi,silver,SA,Murray Bridge
+1499,Cormac,Bergstrom,bronze,ACT,Tuggeranong
+1500,Rafael,Quintero,bronze,QLD,Gold Coast
+1501,Uma,Walsh,silver,VIC,Ballarat
+1502,Sina,Papadopoulos,silver,ACT,Gungahlin
+1503,Joachim,Lundgren,bronze,NT,Katherine
+1504,Ramona,Papadopoulos,bronze,NT,Katherine
+1505,Joachim,Andersen,bronze,NSW,Wollongong
+1506,Tamar,Coelho,bronze,ACT,Tuggeranong
+1507,Finn,Stanton,bronze,SA,Whyalla
+1508,Leo,Reyes,bronze,WA,Perth
+1509,Javier,Dabrowski,bronze,SA,Mount Gambier
+1510,Isabela,Quintero,bronze,TAS,Devonport
+1511,Talia,Laurent,bronze,NT,Alice Springs
+1512,Ebele,Sullivan,bronze,ACT,Tuggeranong
+1513,Maeve,Tahir,bronze,QLD,Cairns
+1514,Talia,Hamilton,bronze,VIC,Ballarat
+1515,Tane,Andersen,silver,ACT,Gungahlin
+1516,Tamar,Moreau,bronze,NT,Alice Springs
+1517,Bianca,Fairweather,gold,ACT,Gungahlin
+1518,Valentina,Dalgleish,bronze,WA,Albany
+1519,Anika,Ramirez,gold,TAS,Burnie
+1520,Sasha,Kimura,silver,NSW,Albury
+1521,Isabela,Farrell,platinum,NT,Darwin
+1522,Ahmed,Ramirez,bronze,NSW,Sydney
+1523,Daniela,McAllister,silver,WA,Albany
+1524,Petra,Mbeki,bronze,NT,Alice Springs
+1525,Amara,Keating,silver,VIC,Mildura
+1526,Oliver,Tahir,platinum,QLD,Rockhampton
+1527,Hamish,Kirkpatrick,gold,NT,Darwin
+1528,Sunil,Park,bronze,WA,Perth
+1529,Sina,Esposito,silver,QLD,Toowoomba
+1530,Valentina,Davies,gold,QLD,Townsville
+1531,Selin,Bakker,bronze,NT,Darwin
+1532,Darius,Kovacs,bronze,NSW,Albury
+1533,Anders,Zielinski,bronze,ACT,Canberra
+1534,Clara,Kalani,gold,TAS,Devonport
+1535,Ochieng,Marchetti,bronze,VIC,Warrnambool
+1536,Hassan,Chen,bronze,QLD,Brisbane
+1537,Aisha,Pinto,bronze,TAS,Burnie
+1538,Saoirse,Barros,bronze,NSW,Sydney
+1539,Zofia,Donnelly,bronze,VIC,Warrnambool
+1540,Zofia,Alvarez,bronze,TAS,Devonport
+1541,Josephine,Duarte,silver,TAS,Devonport
+1542,Olamide,Tanaka,bronze,TAS,Devonport
+1543,Javier,Cavanagh,silver,VIC,Mildura
+1544,Diego,Diallo,bronze,NT,Alice Springs
+1545,Gabriel,Tahir,silver,VIC,Shepparton
+1546,Camila,Jansen,bronze,VIC,Geelong
+1547,Isabela,Stanton,bronze,TAS,Hobart
+1548,Imani,Gruber,bronze,NSW,Orange
+1549,Josephine,Torres,gold,NSW,Newcastle
+1550,Selin,Kimura,gold,NT,Alice Springs
+1551,Daniela,Bakker,bronze,NSW,Dubbo
+1552,Emiko,Leclerc,silver,NT,Palmerston
+1553,Mateo,Torres,bronze,VIC,Shepparton
+1554,Andrea,Suzuki,gold,ACT,Tuggeranong
+1555,Finn,Holloway,bronze,SA,Port Augusta
+1556,Josephine,Gilmore,bronze,WA,Broome
+1557,Tamar,Reyes,gold,SA,Whyalla
+1558,Joachim,Esposito,gold,QLD,Brisbane
+1559,Aditi,Pereira,bronze,WA,Bunbury
+1560,Nikolai,Costa,bronze,WA,Kalgoorlie
+1561,Astrid,Varga,bronze,WA,Bunbury
+1562,Imani,Baptiste,silver,QLD,Townsville
+1563,Lars,Walsh,bronze,NSW,Sydney
+1564,Zeke,Donnelly,bronze,QLD,Toowoomba
+1565,Mei,Bakker,bronze,ACT,Belconnen
+1566,Ida,Diallo,gold,SA,Whyalla
+1567,Mateo,Thornton,bronze,ACT,Belconnen
+1568,Diego,Varga,silver,NSW,Orange
+1569,Darius,Ridgeway,silver,TAS,Launceston
+1570,Laila,Gilmore,bronze,QLD,Townsville
+1571,Sunil,Vance,silver,TAS,Hobart
+1572,Emiko,Bennett,silver,NT,Katherine
+1573,Jasmin,Bennett,bronze,SA,Adelaide
+1574,Kofi,Wojcik,silver,ACT,Belconnen
+1575,Emeka,Zhang,silver,SA,Murray Bridge
+1576,Omar,Fujimoto,silver,VIC,Warrnambool
+1577,Bruno,Eriksen,gold,ACT,Tuggeranong
+1578,Amelia,Kalani,bronze,SA,Port Augusta
+1579,Darius,Yamamoto,bronze,ACT,Gungahlin
+1580,Ravi,Sasaki,bronze,VIC,Melbourne
+1581,Ivan,Boateng,silver,TAS,Burnie
+1582,Dmitri,Laurent,bronze,NT,Alice Springs
+1583,Carlos,Garcia,silver,QLD,Mackay
+1584,Wren,Fairweather,silver,NT,Palmerston
+1585,Ramona,Villanueva,bronze,VIC,Warrnambool
+1586,Zeke,Abbott,bronze,TAS,Launceston
+1587,Freya,Duarte,bronze,ACT,Gungahlin
+1588,Tamar,Davies,silver,NSW,Wollongong
+1589,Yusuf,Zhang,bronze,TAS,Hobart
+1590,Bruno,Zhang,bronze,WA,Perth
+1591,Ida,Ibrahim,bronze,VIC,Geelong
+1592,Zeke,Suzuki,silver,SA,Mount Gambier
+1593,Tariq,Hasegawa,bronze,VIC,Bendigo
+1594,Felipe,Bonnet,bronze,TAS,Hobart
+1595,Ibrahim,Bakker,bronze,QLD,Gold Coast
+1596,Viktor,Rasmussen,bronze,SA,Adelaide
+1597,Dmitri,Delacroix,bronze,SA,Murray Bridge
+1598,Jacinta,Torres,silver,NT,Alice Springs
+1599,Rhys,Mahmood,bronze,VIC,Melbourne
+1600,Thandiwe,Park,silver,NT,Katherine
+1601,Jia,Macpherson,silver,SA,Whyalla
+1602,Ophelia,Fontaine,bronze,ACT,Canberra
+1603,Hamish,Walsh,bronze,VIC,Warrnambool
+1604,Malia,Martins,bronze,TAS,Burnie
+1605,Dechen,Gilmore,silver,WA,Geraldton
+1606,Ludwig,Villanueva,gold,QLD,Townsville
+1607,Diego,Sokolov,silver,ACT,Canberra
+1608,Lian,Jansen,silver,ACT,Tuggeranong
+1609,Javier,Reyes,bronze,SA,Port Augusta
+1610,Hana,Sinclair,bronze,ACT,Tuggeranong
+1611,Rina,Ivanov,bronze,NSW,Sydney
+1612,Tadeo,McAllister,silver,SA,Murray Bridge
+1613,Bruno,Sullivan,bronze,TAS,Burnie
+1614,Aroha,Dabrowski,bronze,VIC,Warrnambool
+1615,Ahmed,Zielinski,silver,VIC,Geelong
+1616,Aroha,Malik,silver,QLD,Toowoomba
+1617,Dechen,Cabrera,silver,SA,Murray Bridge
+1618,Tamar,Yilmaz,silver,VIC,Melbourne
+1619,Tamar,Bonnet,silver,NSW,Wagga Wagga
+1620,Pedro,Ricci,platinum,QLD,Gold Coast
+1621,Finn,Bennett,platinum,TAS,Devonport
+1622,Sasha,Sasaki,silver,QLD,Cairns
+1623,Yusuf,Malik,gold,QLD,Mackay
+1624,Gabriel,Sharma,bronze,NT,Katherine
+1625,Rohan,Marchetti,bronze,TAS,Launceston
+1626,Anders,Rafferty,bronze,NSW,Dubbo
+1627,Kalinda,Hasegawa,gold,TAS,Launceston
+1628,Rhys,Laurent,silver,NSW,Albury
+1629,Katarina,Gruber,bronze,TAS,Burnie
+1630,Rina,Mendoza,gold,VIC,Ballarat
+1631,Manon,Quintero,silver,TAS,Burnie
+1632,Maeve,Abbott,silver,VIC,Bendigo
+1633,Noor,Fujimoto,bronze,WA,Albany
+1634,Ruben,Costa,bronze,NT,Darwin
+1635,Andrea,Hamilton,gold,QLD,Gold Coast
+1636,Nuala,Kaminski,gold,NT,Palmerston
+1637,Uma,Brennan,silver,VIC,Geelong
+1638,Katarina,Nkemelu,bronze,NT,Alice Springs
+1639,Kiara,Kovacs,silver,SA,Mount Gambier
+1640,Rohan,Thornton,bronze,QLD,Townsville
+1641,Kalinda,Sharma,bronze,WA,Broome
+1642,Sunil,Dubois,silver,VIC,Warrnambool
+1643,Lars,Aoki,silver,WA,Geraldton
+1644,Tobias,Chowdhury,silver,QLD,Cairns
+1645,Tobias,Vasquez,platinum,WA,Kalgoorlie
+1646,Ivan,Chen,silver,QLD,Rockhampton
+1647,Juno,Wickramasinghe,silver,ACT,Canberra
+1648,Ravi,Wickramasinghe,platinum,TAS,Hobart
+1649,Grace,Tanaka,gold,QLD,Brisbane
+1650,Leilani,Lindqvist,platinum,SA,Murray Bridge
+1651,Aditi,Zhang,bronze,QLD,Toowoomba
+1652,Mohan,Silva,bronze,VIC,Bendigo
+1653,Mateo,Cavanagh,bronze,NSW,Wollongong
+1654,Diego,Silva,platinum,WA,Albany
+1655,Aaliyah,Navarro,gold,VIC,Geelong
+1656,Tane,Bonnet,bronze,NT,Darwin
+1657,Ruben,Jansen,bronze,NT,Palmerston
+1658,Lachlan,Wickramasinghe,bronze,NSW,Albury
+1659,Blake,Sinclair,platinum,NT,Palmerston
+1660,Priya,Tahir,bronze,SA,Mount Gambier
+1661,Priya,Tahir,bronze,NT,Palmerston
+1662,Clara,Moreau,bronze,QLD,Mackay
+1663,Tamar,Krishnan,silver,NT,Palmerston
+1664,Ramona,Pereira,bronze,VIC,Shepparton
+1665,Zofia,Mendoza,silver,ACT,Gungahlin
+1666,Mira,Ramirez,platinum,WA,Bunbury
+1667,Leo,Lundgren,silver,ACT,Tuggeranong
+1668,Darius,Yamamoto,gold,VIC,Melbourne
+1669,Xiulan,Pinto,bronze,VIC,Warrnambool
+1670,Hassan,Zhang,bronze,ACT,Canberra
+1671,Zeke,Petrov,bronze,NT,Darwin
+1672,Aroha,Bennett,gold,ACT,Belconnen
+1673,Maeve,Papadopoulos,silver,NSW,Albury
+1674,Ophelia,Sinclair,bronze,SA,Whyalla
+1675,Keanu,Sullivan,bronze,NT,Katherine
+1676,Rina,Duarte,bronze,VIC,Geelong
+1677,Quentin,Andersen,bronze,SA,Port Augusta
+1678,Valentina,Lindqvist,silver,QLD,Rockhampton
+1679,Javier,Villanueva,bronze,WA,Kalgoorlie
+1680,Thandiwe,Keating,bronze,WA,Perth
+1681,Ophelia,Kapoor,bronze,WA,Kalgoorlie
+1682,Carlos,Marchetti,silver,NT,Darwin
+1683,Zainab,Ghosh,silver,TAS,Launceston
+1684,Marcus,Jaganathan,silver,ACT,Gungahlin
+1685,Selin,Hoffman,silver,WA,Bunbury
+1686,Eleni,Bakker,silver,NSW,Albury
+1687,Rina,Reyes,gold,NSW,Newcastle
+1688,Malia,Kaminski,bronze,NSW,Wagga Wagga
+1689,Viktor,Nakamura,silver,NT,Palmerston
+1690,Freya,Gruber,bronze,NT,Palmerston
+1691,Dechen,Davies,silver,VIC,Ballarat
+1692,Yara,Vance,silver,SA,Mount Gambier
+1693,Finn,Petrov,silver,NT,Alice Springs
+1694,Rohan,Wachowski,bronze,SA,Mount Gambier
+1695,Emiko,Pahlavi,bronze,SA,Murray Bridge
+1696,Marcus,Lombardi,bronze,ACT,Canberra
+1697,Chloe,Nakamura,bronze,NT,Palmerston
+1698,Olamide,Chakraborty,bronze,WA,Broome
+1699,Yusuf,Wojcik,bronze,NT,Alice Springs
+1700,Keanu,Farrell,bronze,NSW,Newcastle
+1701,Grace,Keating,gold,TAS,Hobart
+1702,Tariq,Zielinski,silver,SA,Adelaide
+1703,Valentina,Duarte,bronze,SA,Mount Gambier
+1704,Keanu,Aoki,gold,VIC,Bendigo
+1705,Noor,Nakamura,bronze,NT,Katherine
+1706,Aroha,McAllister,bronze,SA,Mount Gambier
+1707,Rohan,Fontaine,bronze,VIC,Ballarat
+1708,Soren,Keating,bronze,NT,Darwin
+1709,Omar,Bakker,bronze,TAS,Launceston
+1710,Gabriel,Kaminski,gold,SA,Port Augusta
+1711,Priya,Adeyemi,platinum,ACT,Tuggeranong
+1712,Jacinta,Bergstrom,silver,SA,Murray Bridge
+1713,Ruben,Lundgren,silver,VIC,Geelong
+1714,Sina,Jaganathan,bronze,NSW,Albury
+1715,Grace,Andersen,bronze,ACT,Belconnen
+1716,Mira,Eriksen,bronze,TAS,Devonport
+1717,Maeve,Bergstrom,gold,VIC,Warrnambool
+1718,Tane,Kirkpatrick,bronze,NT,Katherine
+1719,Rhys,Suzuki,silver,TAS,Devonport
+1720,Tamar,Tahir,silver,SA,Mount Gambier
+1721,Manon,Pahlavi,gold,NSW,Wagga Wagga
+1722,Sunil,Abbott,bronze,NSW,Wagga Wagga
+1723,Dechen,Navarro,silver,QLD,Townsville
+1724,Anders,Novak,gold,WA,Broome
+1725,Jonas,Quintero,gold,ACT,Canberra
+1726,Reza,Lombardi,bronze,WA,Bunbury
+1727,Rhys,Sasaki,bronze,NSW,Newcastle
+1728,Grace,Schneider,bronze,NT,Alice Springs
+1729,Theo,Jaganathan,bronze,TAS,Hobart
+1730,Leilani,Fairweather,silver,NSW,Newcastle
+1731,Soren,Lundgren,silver,TAS,Devonport
+1732,Alice,Oyelaran,bronze,SA,Adelaide
+1733,Oliver,Santos,silver,VIC,Ballarat
+1734,Clara,Navarro,bronze,QLD,Townsville
+1735,Elodie,Dabrowski,silver,TAS,Launceston
+1736,Petra,Garcia,silver,NT,Katherine
+1737,Mira,Chen,bronze,QLD,Gold Coast
+1738,Jae,Kalani,bronze,ACT,Belconnen
+1739,Thandiwe,Wickramasinghe,bronze,TAS,Hobart
+1740,Eleni,Wachowski,silver,SA,Murray Bridge
+1741,Ewan,Bianchi,bronze,QLD,Rockhampton
+1742,Ophelia,Duarte,bronze,VIC,Bendigo
+1743,Ebele,Novak,gold,QLD,Cairns
+1744,Josephine,Ghosh,silver,ACT,Gungahlin
+1745,Carlos,Aoki,silver,QLD,Toowoomba
+1746,Camila,Sasaki,bronze,QLD,Brisbane
+1747,Jae,Bennett,bronze,SA,Whyalla
+1748,Gabriel,Gruber,silver,NSW,Wollongong
+1749,Khalid,Donnelly,bronze,NT,Alice Springs
+1750,Amelia,Bianchi,bronze,NSW,Wollongong
+1751,Jae,Abbott,gold,NT,Darwin
+1752,Nuala,Gruber,silver,WA,Albany
+1753,Zainab,Ahmadi,silver,TAS,Devonport
+1754,Ahmed,Martins,bronze,TAS,Devonport
+1755,Javier,Kalani,bronze,VIC,Warrnambool
+1756,Noor,Navarro,gold,NT,Katherine
+1757,Petra,Wachowski,platinum,NT,Alice Springs
+1758,Xiulan,Park,bronze,WA,Albany
+1759,Khalid,Reyes,bronze,ACT,Canberra
+1760,Ivan,Suzuki,bronze,NSW,Albury
+1761,Gabriel,Zhang,silver,SA,Port Augusta
+1762,Soren,Sharma,bronze,TAS,Launceston
+1763,Juno,Wojcik,bronze,ACT,Tuggeranong
+1764,Dechen,Fontaine,bronze,QLD,Rockhampton
+1765,Clara,Leclerc,bronze,QLD,Toowoomba
+1766,Nikolai,Walsh,bronze,QLD,Cairns
+1767,Darius,Garcia,bronze,NSW,Wollongong
+1768,Jacinta,Boateng,bronze,NT,Darwin
+1769,Cormac,Oyelaran,bronze,SA,Port Augusta
+1770,Ahmed,Martins,gold,TAS,Burnie
+1771,Pedro,Gruber,bronze,QLD,Toowoomba
+1772,Hassan,Aoki,silver,TAS,Devonport
+1773,Khalid,Navarro,silver,NSW,Newcastle
+1774,Khalid,Vance,platinum,VIC,Mildura
+1775,Ingrid,Esposito,silver,TAS,Burnie
+1776,Jamal,Schneider,bronze,VIC,Bendigo
+1777,Astrid,Navarro,silver,QLD,Toowoomba
+1778,Selin,Sokolov,silver,WA,Kalgoorlie
+1779,Sunil,Macpherson,bronze,NSW,Dubbo
+1780,Bianca,Tahir,silver,WA,Fremantle
+1781,Eleni,Moreau,platinum,SA,Mount Gambier
+1782,Aisha,Kaczmarek,bronze,NSW,Sydney
+1783,Esther,Keating,bronze,NT,Darwin
+1784,Noor,Kovacs,silver,SA,Murray Bridge
+1785,Soren,Mendoza,bronze,VIC,Melbourne
+1786,Aisha,Fennimore,bronze,ACT,Tuggeranong
+1787,Ahmed,Kovacs,silver,SA,Port Augusta
+1788,Pedro,Varga,platinum,VIC,Melbourne
+1789,Leo,Chakraborty,bronze,VIC,Bendigo
+1790,Hamish,Zhang,bronze,ACT,Canberra
+1791,Micheline,Takahashi,gold,WA,Fremantle
+1792,Saoirse,Dalgleish,gold,TAS,Hobart
+1793,Amara,Thornton,bronze,QLD,Rockhampton
+1794,Esther,Halloran,gold,NSW,Newcastle
+1795,Saoirse,Kaminski,silver,SA,Murray Bridge
+1796,Jae,Krishnan,bronze,QLD,Mackay
+1797,Grace,Trevelyan,silver,NT,Alice Springs
+1798,Joachim,Sasaki,bronze,ACT,Gungahlin
+1799,Emiko,Papadopoulos,silver,ACT,Belconnen
+1800,Amara,McAllister,bronze,TAS,Launceston
+1801,Zara,Whitaker,gold,ACT,Belconnen
+1802,Lucia,Rossi,bronze,TAS,Burnie
+1803,Mateo,Reyes,bronze,NSW,Coffs Harbour
+1804,Harriet,Fitzgerald,bronze,SA,Mount Gambier
+1805,Yara,Karlsson,bronze,VIC,Shepparton
+1806,Imani,Sasaki,silver,TAS,Burnie
+1807,Joachim,Ibrahim,silver,ACT,Canberra
+1808,Talia,Garcia,bronze,SA,Whyalla
+1809,Ramona,Stanton,silver,ACT,Tuggeranong
+1810,Jonas,Zielinski,bronze,NT,Alice Springs
+1811,Oliver,Kapoor,silver,QLD,Rockhampton
+1812,Zainab,Ricci,silver,NSW,Orange
+1813,Adrian,Trevelyan,silver,VIC,Shepparton
+1814,Jacinta,Villanueva,bronze,VIC,Bendigo
+1815,Cormac,Farrell,bronze,WA,Broome
+1816,Ida,Gilmore,gold,ACT,Belconnen
+1817,Daniela,Kalani,platinum,NSW,Sydney
+1818,Chloe,Fontaine,bronze,TAS,Launceston
+1819,Mohan,Ghosh,bronze,VIC,Warrnambool
+1820,Mira,Wojcik,silver,QLD,Townsville
+1821,Xiulan,Sasaki,silver,TAS,Launceston
+1822,Elodie,Nguyen,bronze,NSW,Sydney
+1823,Ruben,Cavanagh,bronze,ACT,Gungahlin
+1824,Jamal,Ridgeway,silver,QLD,Cairns
+1825,Mira,Adeyemi,silver,QLD,Cairns
+1826,Petra,Sullivan,bronze,ACT,Canberra
+1827,Adrian,Kaczmarek,bronze,ACT,Belconnen
+1828,Cormac,Fairweather,silver,ACT,Gungahlin
+1829,Omar,Kaminski,bronze,NSW,Albury
+1830,Caitlin,Nguyen,bronze,TAS,Launceston
+1831,Omar,Oyelaran,bronze,QLD,Cairns
+1832,Laila,Davies,bronze,NT,Alice Springs
+1833,Rafael,Santos,bronze,TAS,Hobart
+1834,Ebele,McAllister,platinum,ACT,Belconnen
+1835,Cormac,Arnold,bronze,ACT,Tuggeranong
+1836,Clara,Fujimoto,silver,ACT,Belconnen
+1837,Chloe,Yamamoto,bronze,ACT,Belconnen
+1838,Manon,McAllister,silver,SA,Murray Bridge
+1839,Thandiwe,Boateng,gold,SA,Murray Bridge
+1840,Esther,Varga,bronze,NT,Alice Springs
+1841,Saoirse,Keating,silver,TAS,Burnie
+1842,Thandiwe,Chakraborty,silver,NT,Alice Springs
+1843,Ida,Donnelly,bronze,QLD,Brisbane
+1844,Darius,Sinclair,gold,NT,Alice Springs
+1845,Jae,Reyes,bronze,WA,Kalgoorlie
+1846,Elodie,Kimura,bronze,VIC,Ballarat
+1847,Shreya,Rahman,bronze,VIC,Warrnambool
+1848,Chloe,Thornton,silver,ACT,Belconnen
+1849,Jamal,Boateng,silver,WA,Bunbury
+1850,Ingrid,Lombardi,bronze,QLD,Cairns
+1851,Marcus,Keating,silver,WA,Fremantle
+1852,Jasmin,Farrell,bronze,NT,Darwin
+1853,Reza,Grimaldi,gold,VIC,Ballarat
+1854,Jia,Dubois,bronze,SA,Mount Gambier
+1855,Mei,Blackwood,bronze,SA,Murray Bridge
+1856,Mira,Villanueva,gold,QLD,Cairns
+1857,Ida,Reyes,bronze,TAS,Burnie
+1858,Lachlan,Lindqvist,bronze,ACT,Belconnen
+1859,Juno,Zielinski,silver,WA,Albany
+1860,Cheng,Delacroix,gold,NT,Katherine
+1861,Jae,Delacroix,silver,WA,Bunbury
+1862,Ochieng,Torres,silver,WA,Geraldton
+1863,Freya,Gilmore,bronze,NT,Katherine
+1864,Cormac,Chowdhury,bronze,ACT,Gungahlin
+1865,Ruben,Laurent,silver,NT,Darwin
+1866,Quentin,Stanton,bronze,NT,Palmerston
+1867,Dechen,Brennan,silver,ACT,Tuggeranong
+1868,Xiulan,Kirkpatrick,platinum,NT,Katherine
+1869,Harriet,Dubois,silver,NSW,Coffs Harbour
+1870,Elodie,Chakraborty,gold,WA,Fremantle
+1871,Grace,Holloway,bronze,SA,Mount Gambier
+1872,Emeka,Khan,bronze,NSW,Dubbo
+1873,Felipe,Malik,bronze,NT,Palmerston
+1874,Theo,Laurent,silver,QLD,Mackay
+1875,Laila,Stanton,silver,NSW,Dubbo
+1876,Lars,Schneider,gold,QLD,Cairns
+1877,Astrid,Petrov,silver,ACT,Canberra
+1878,Javier,Pereira,gold,ACT,Gungahlin
+1879,Aaliyah,Fontaine,bronze,VIC,Mildura
+1880,Kai,Sullivan,bronze,VIC,Warrnambool
+1881,Juno,Chowdhury,silver,ACT,Gungahlin
+1882,Ingrid,Martins,bronze,SA,Whyalla
+1883,Kai,Rahman,bronze,ACT,Tuggeranong
+1884,Antonio,Chakraborty,silver,TAS,Burnie
+1885,Emiko,Fontaine,silver,NT,Darwin
+1886,Tane,Yilmaz,bronze,WA,Kalgoorlie
+1887,Zeke,Trevelyan,bronze,ACT,Tuggeranong
+1888,Maeve,Torres,bronze,NSW,Dubbo
+1889,Leo,Takahashi,bronze,WA,Broome
+1890,Kalinda,Takahashi,silver,NT,Katherine
+1891,Rafael,Mbeki,bronze,NT,Palmerston
+1892,Zara,Kapoor,gold,SA,Mount Gambier
+1893,Mahdi,Reyes,silver,NSW,Dubbo
+1894,Joachim,Villanueva,bronze,NT,Alice Springs
+1895,Katarina,Laurent,bronze,WA,Albany
+1896,Micheline,Kaur,bronze,SA,Port Augusta
+1897,Ingrid,Suzuki,gold,ACT,Tuggeranong
+1898,Blake,Brennan,silver,SA,Port Augusta
+1899,Joachim,Wojcik,platinum,NSW,Orange
+1900,Alice,Jansen,gold,WA,Broome
+1901,Laila,Davies,bronze,WA,Geraldton
+1902,Tane,Wickramasinghe,silver,ACT,Tuggeranong
+1903,Caitlin,Blackwood,silver,SA,Adelaide
+1904,Rosa,Chen,silver,SA,Whyalla
+1905,Zeke,Kovacs,silver,TAS,Devonport
+1906,Jamal,Abbott,silver,NSW,Albury
+1907,Nikolai,Fennimore,silver,QLD,Gold Coast
+1908,Genevieve,Gauthier,silver,QLD,Toowoomba
+1909,Freya,Halloran,silver,NSW,Dubbo
+1910,Aroha,Kimura,silver,VIC,Geelong
+1911,Mira,Hendricks,gold,VIC,Warrnambool
+1912,Daniela,Bonnet,silver,NSW,Newcastle
+1913,Antonio,Fujimoto,silver,WA,Geraldton
+1914,Dechen,Boateng,gold,VIC,Mildura
+1915,Nikolai,Esposito,silver,WA,Geraldton
+1916,Aaliyah,Hasegawa,gold,NT,Palmerston
+1917,Oliver,Reyes,silver,NT,Alice Springs
+1918,Javier,Kaczmarek,gold,SA,Whyalla
+1919,Noor,Petrov,bronze,NT,Palmerston
+1920,Zeke,Malik,gold,NSW,Wollongong
+1921,Hina,Abbott,silver,ACT,Canberra
+1922,Shreya,Sandoval,bronze,VIC,Melbourne
+1923,Ewan,Malik,silver,VIC,Ballarat
+1924,Adrian,Dabrowski,bronze,NSW,Dubbo
+1925,Selin,Gallagher,gold,VIC,Bendigo
+1926,Hina,Dubois,bronze,QLD,Townsville
+1927,Sasha,Aoki,bronze,VIC,Geelong
+1928,Malia,Ridgeway,bronze,QLD,Townsville
+1929,Soren,Petrov,bronze,WA,Geraldton
+1930,Elias,Baptiste,gold,SA,Whyalla
+1931,Keanu,Kaur,silver,TAS,Hobart
+1932,Ewan,Delacroix,gold,WA,Fremantle
+1933,Bruno,McAllister,bronze,NT,Alice Springs
+1934,Tadeo,Lundgren,platinum,QLD,Gold Coast
+1935,Malia,Gilmore,bronze,QLD,Mackay
+1936,Nikolai,Costa,bronze,TAS,Hobart
+1937,Ravi,Stanton,gold,SA,Murray Bridge
+1938,Tamar,Hamilton,bronze,TAS,Burnie
+1939,Giulia,Clarke,bronze,NSW,Dubbo
+1940,Uma,Sinclair,bronze,ACT,Belconnen
+1941,Nuala,Beauchamp,bronze,NSW,Newcastle
+1942,Cheng,Park,bronze,QLD,Townsville
+1943,Pedro,Halloran,bronze,NT,Alice Springs
+1944,Amelia,Mendoza,silver,QLD,Townsville
+1945,Emeka,Kirkpatrick,bronze,QLD,Rockhampton
+1946,Talia,Pinto,bronze,NT,Katherine
+1947,Amara,Novak,silver,NSW,Wagga Wagga
+1948,Cormac,Walsh,bronze,VIC,Bendigo
+1949,Anika,Eriksen,bronze,SA,Adelaide
+1950,Nuala,Gallagher,bronze,ACT,Gungahlin
+1951,Ebele,Eriksen,silver,TAS,Hobart
+1952,Harriet,Barros,bronze,NT,Darwin
+1953,Malia,Rafferty,bronze,VIC,Mildura
+1954,Zofia,Esposito,platinum,NSW,Albury
+1955,Khalid,Bianchi,gold,SA,Adelaide
+1956,Andrea,Malik,silver,NT,Alice Springs
+1957,Sunil,Malik,silver,NT,Alice Springs
+1958,Viktor,Bergstrom,bronze,ACT,Tuggeranong
+1959,Ebele,Wachowski,platinum,SA,Murray Bridge
+1960,Gabriel,Kalani,silver,WA,Perth
+1961,Chloe,Macpherson,silver,TAS,Burnie
+1962,Aaliyah,Delacroix,gold,QLD,Gold Coast
+1963,Lian,Mbeki,bronze,TAS,Launceston
+1964,Tobias,Krishnan,bronze,SA,Adelaide
+1965,Keanu,Ricci,silver,WA,Albany
+1966,Sofia,Barros,bronze,NT,Alice Springs
+1967,Hina,Trevelyan,gold,SA,Port Augusta
+1968,Nikolai,Brennan,silver,VIC,Melbourne
+1969,Soren,Dubois,platinum,NSW,Albury
+1970,Shreya,Sullivan,bronze,WA,Albany
+1971,Amara,Farrell,bronze,VIC,Mildura
+1972,Cormac,Rossi,silver,ACT,Belconnen
+1973,Mira,Maguire,bronze,NT,Darwin
+1974,Viktor,Novak,platinum,NSW,Newcastle
+1975,Felipe,Malik,gold,VIC,Shepparton
+1976,Anika,Lindqvist,bronze,QLD,Mackay
+1977,Zeke,Gruber,bronze,NT,Katherine
+1978,Zara,Torres,bronze,SA,Murray Bridge
+1979,Sunil,Lindqvist,bronze,ACT,Canberra
+1980,Theo,Kovacs,bronze,NT,Darwin
+1981,Amara,Varga,bronze,NT,Palmerston
+1982,Mahdi,Sokolov,bronze,TAS,Hobart
+1983,Dmitri,Varga,bronze,VIC,Warrnambool
+1984,Manon,Kovacs,silver,ACT,Gungahlin
+1985,Maeve,Keating,silver,TAS,Hobart
+1986,Diego,Pinto,bronze,ACT,Tuggeranong
+1987,Ivan,Marchetti,bronze,NSW,Dubbo
+1988,Chloe,Cabrera,bronze,TAS,Devonport
+1989,Diego,Macpherson,gold,VIC,Bendigo
+1990,Rafael,Ricci,silver,SA,Adelaide
+1991,Harriet,Oyelaran,bronze,NT,Katherine
+1992,Leilani,Cavanagh,bronze,SA,Port Augusta
+1993,Finn,Silva,silver,WA,Kalgoorlie
+1994,Javier,Sharma,gold,QLD,Brisbane
+1995,Daniela,Sinclair,silver,ACT,Belconnen
+1996,Ahmed,Diallo,bronze,WA,Bunbury
+1997,Alice,Moreau,bronze,NSW,Dubbo
+1998,Viktor,Mikkelsen,silver,NSW,Wollongong
+1999,Ophelia,Laurent,bronze,NT,Alice Springs
+2000,Emiko,Bakker,bronze,SA,Murray Bridge
+2001,Thandiwe,Zhang,bronze,QLD,Cairns
+2002,Kai,Ghosh,gold,NSW,Dubbo
+2003,Jonas,Sasaki,gold,SA,Murray Bridge
+2004,Giulia,Whitaker,platinum,VIC,Melbourne
+2005,Jamal,Hamilton,silver,QLD,Rockhampton
+2006,Reza,Eriksen,bronze,VIC,Warrnambool
+2007,Joachim,Bakker,silver,WA,Albany
+2008,Ravi,Park,bronze,QLD,Toowoomba
+2009,Tariq,Brennan,gold,TAS,Launceston
+2010,Kai,Fujimoto,bronze,QLD,Rockhampton
+2011,Astrid,Baptiste,silver,NSW,Newcastle
+2012,Lars,Chen,bronze,QLD,Rockhampton
+2013,Tariq,Bergstrom,silver,QLD,Townsville
+2014,Oliver,Vasquez,bronze,VIC,Bendigo
+2015,Yara,Malik,bronze,NT,Alice Springs
+2016,Keanu,Pereira,silver,ACT,Tuggeranong
+2017,Yara,Diallo,bronze,NSW,Coffs Harbour
+2018,Valentina,Hendricks,bronze,NT,Palmerston
+2019,Diego,Brennan,silver,WA,Perth
+2020,Theo,Lundgren,silver,SA,Whyalla
+2021,Jasmin,Sinclair,bronze,NT,Alice Springs
+2022,Amelia,Grimaldi,bronze,ACT,Belconnen
+2023,Rosa,Kapoor,bronze,NT,Katherine
+2024,Jasmin,Coelho,platinum,NT,Katherine
+2025,Ibrahim,Halloran,bronze,SA,Port Augusta
+2026,Aroha,Barros,bronze,SA,Adelaide
+2027,Mohan,Mendoza,bronze,QLD,Cairns
+2028,Jasmin,Dimitriou,bronze,NSW,Coffs Harbour
+2029,Shreya,Ahmadi,bronze,SA,Adelaide
+2030,Adrian,Kaminski,silver,WA,Albany
+2031,Jia,Gruber,gold,VIC,Melbourne
+2032,Caitlin,Ibrahim,silver,TAS,Devonport
+2033,Cormac,Sandoval,bronze,VIC,Melbourne
+2034,Aroha,Kalani,silver,NT,Darwin
+2035,Ahmed,Mikkelsen,silver,QLD,Toowoomba
+2036,Anders,Tahir,bronze,SA,Whyalla
+2037,Hassan,Cabrera,bronze,TAS,Burnie
+2038,Alejandro,Ridgeway,bronze,NSW,Wagga Wagga
+2039,Clara,Krishnan,silver,VIC,Bendigo
+2040,Ingrid,Adeyemi,bronze,SA,Mount Gambier
+2041,Micheline,Kaminski,platinum,TAS,Launceston
+2042,Kai,Abbott,bronze,ACT,Canberra
+2043,Rhys,Jarvis,silver,VIC,Bendigo
+2044,Javier,Keating,silver,QLD,Rockhampton
+2045,Lian,Fitzgerald,silver,QLD,Mackay
+2046,Mira,Jansen,gold,QLD,Toowoomba
+2047,Lucia,Rafferty,bronze,VIC,Melbourne
+2048,Kiara,Barros,bronze,NT,Darwin
+2049,Khalid,Bergstrom,silver,WA,Perth
+2050,Josephine,Eriksen,bronze,ACT,Tuggeranong
+2051,Ebele,Takahashi,bronze,TAS,Devonport
+2052,Rafael,Mahmood,silver,NT,Darwin
+2053,Tadeo,Suzuki,silver,SA,Adelaide
+2054,Astrid,Boateng,gold,VIC,Bendigo
+2055,Ophelia,Quintero,bronze,QLD,Cairns
+2056,Ewan,Villanueva,silver,WA,Broome
+2057,Aisha,Holloway,silver,TAS,Launceston
+2058,Ruben,Reyes,platinum,TAS,Devonport
+2059,Wren,Lindqvist,silver,TAS,Devonport
+2060,Reza,Dabrowski,bronze,NSW,Coffs Harbour
+2061,Mei,Kaczmarek,gold,TAS,Hobart
+2062,Mahdi,Jaganathan,silver,WA,Fremantle
+2063,Lars,Bergstrom,bronze,QLD,Cairns
+2064,Quentin,Mbeki,bronze,TAS,Hobart
+2065,Ophelia,Rossi,silver,ACT,Gungahlin
+2066,Mohan,Rahman,bronze,NT,Palmerston
+2067,Paloma,Tahir,bronze,QLD,Cairns
+2068,Camila,Marchetti,silver,NT,Palmerston
+2069,Esther,Clarke,platinum,QLD,Townsville
+2070,Aaliyah,Macpherson,silver,VIC,Melbourne
+2071,Isabela,Villanueva,bronze,NT,Katherine
+2072,Tadeo,Yilmaz,silver,NSW,Coffs Harbour
+2073,Malia,Lindqvist,silver,NT,Darwin
+2074,Bianca,Brennan,bronze,VIC,Shepparton
+2075,Talia,Kalani,bronze,VIC,Melbourne
+2076,Sofia,Zielinski,bronze,VIC,Ballarat
+2077,Amelia,Beauchamp,bronze,NSW,Newcastle
+2078,Jae,Sinclair,bronze,TAS,Launceston
+2079,Jonas,Chowdhury,bronze,SA,Mount Gambier
+2080,Eleni,Jansen,silver,TAS,Devonport
+2081,Yusuf,Quintero,bronze,QLD,Gold Coast
+2082,Imani,Jarvis,gold,VIC,Ballarat
+2083,Zofia,Thornton,gold,TAS,Burnie
+2084,Manon,Bakker,bronze,VIC,Melbourne
+2085,Genevieve,Adeyemi,bronze,TAS,Devonport
+2086,Mei,Cabrera,platinum,QLD,Rockhampton
+2087,Astrid,Laurent,platinum,SA,Adelaide
+2088,Alice,Blackwood,bronze,QLD,Townsville
+2089,Shreya,Zielinski,bronze,ACT,Tuggeranong
+2090,Ivan,Kapoor,bronze,NSW,Wollongong
+2091,Rina,Krishnan,gold,WA,Perth
+2092,Imani,Chakraborty,bronze,TAS,Burnie
+2093,Kiara,Vasquez,bronze,TAS,Launceston
+2094,Jonas,Hamilton,bronze,TAS,Hobart
+2095,Arjun,Eriksen,bronze,NSW,Orange
+2096,Valentina,Vasquez,bronze,VIC,Warrnambool
+2097,Ingrid,Silva,bronze,ACT,Belconnen
+2098,Ahmed,Karlsson,silver,QLD,Townsville
+2099,Khalid,Mendoza,gold,NT,Darwin
+2100,Manon,Chakraborty,bronze,WA,Fremantle
+2101,Laila,Vance,gold,QLD,Rockhampton
+2102,Mohan,Papadopoulos,silver,VIC,Melbourne
+2103,Elias,Andersen,bronze,NSW,Newcastle
+2104,Jae,Alvarez,platinum,NSW,Newcastle
+2105,Mahdi,Lundgren,silver,QLD,Brisbane
+2106,Caitlin,Ivanov,bronze,SA,Port Augusta
+2107,Lucia,Dabrowski,gold,QLD,Gold Coast
+2108,Leo,Rossi,silver,WA,Geraldton
+2109,Priya,Chakraborty,bronze,QLD,Mackay
+2110,Priya,Duarte,gold,WA,Fremantle
+2111,Chloe,Boateng,silver,VIC,Shepparton
+2112,Laila,Yamamoto,gold,NT,Katherine
+2113,Sunil,Duarte,bronze,QLD,Townsville
+2114,Alejandro,Donnelly,silver,SA,Murray Bridge
+2115,Giulia,Davies,gold,WA,Fremantle
+2116,Cormac,Kaur,silver,SA,Adelaide
+2117,Kalinda,Takahashi,gold,TAS,Hobart
+2118,Selin,Chowdhury,gold,WA,Geraldton
+2119,Carlos,Zhang,bronze,TAS,Hobart
+2120,Josephine,Quintero,bronze,TAS,Launceston
+2121,Petra,Sokolov,silver,NT,Katherine
+2122,Leo,Bianchi,platinum,WA,Fremantle
+2123,Finn,Bonnet,silver,NSW,Orange
+2124,Olamide,Rafferty,gold,VIC,Bendigo
+2125,Paloma,Maguire,silver,WA,Geraldton
+2126,Ochieng,Zielinski,platinum,TAS,Launceston
+2127,Tamar,Pahlavi,silver,TAS,Launceston
+2128,Theo,Schneider,gold,QLD,Townsville
+2129,Carlos,Garcia,gold,WA,Perth
+2130,Anika,Leclerc,bronze,ACT,Canberra
+2131,Dechen,Kaczmarek,bronze,SA,Mount Gambier
+2132,Ochieng,Kovacs,platinum,TAS,Launceston
+2133,Laila,Nguyen,gold,ACT,Canberra
+2134,Maeve,Beauchamp,bronze,TAS,Launceston
+2135,Andrea,Mahmood,bronze,TAS,Hobart
+2136,Aroha,Nakamura,platinum,TAS,Launceston
+2137,Dmitri,Chowdhury,silver,VIC,Geelong
+2138,Amelia,Ghosh,gold,WA,Broome
+2139,Lucia,Bergstrom,bronze,QLD,Mackay
+2140,Tadeo,Diallo,bronze,NT,Darwin
+2141,Anders,Fennimore,silver,SA,Mount Gambier
+2142,Noor,Gilmore,gold,TAS,Hobart
+2143,Kofi,Bakker,bronze,VIC,Geelong
+2144,Mira,Tanaka,bronze,NSW,Albury
+2145,Giulia,Schneider,platinum,VIC,Ballarat
+2146,Mateo,Wickramasinghe,silver,TAS,Hobart
+2147,Jasmin,Leclerc,bronze,TAS,Launceston
+2148,Uma,Holloway,bronze,VIC,Ballarat
+2149,Noor,Mikkelsen,silver,WA,Bunbury
+2150,Jia,Bianchi,silver,QLD,Mackay
+2151,Rina,Sasaki,gold,QLD,Townsville
+2152,Tadeo,Walsh,bronze,WA,Perth
+2153,Quentin,Pereira,bronze,QLD,Mackay
+2154,Khalid,Andersen,bronze,ACT,Belconnen
+2155,Clara,Fitzgerald,silver,WA,Broome
+2156,Ramona,Vasquez,bronze,ACT,Tuggeranong
+2157,Ochieng,Davies,gold,QLD,Gold Coast
+2158,Keanu,Cabrera,bronze,VIC,Bendigo
+2159,Cheng,Nakamura,bronze,NSW,Wollongong
+2160,Thandiwe,Mahmood,bronze,VIC,Melbourne
+2161,Antonio,Macpherson,silver,TAS,Hobart
+2162,Oliver,Hoffman,silver,NSW,Orange
+2163,Ahmed,Fujimoto,bronze,QLD,Townsville
+2164,Quentin,Mikkelsen,gold,QLD,Toowoomba
+2165,Petra,Malik,silver,QLD,Townsville
+2166,Hassan,Gallagher,bronze,ACT,Canberra
+2167,Tane,Wojcik,bronze,QLD,Rockhampton
+2168,Oliver,Arnold,bronze,ACT,Tuggeranong
+2169,Javier,Sullivan,bronze,SA,Adelaide
+2170,Genevieve,Pinto,bronze,TAS,Hobart
+2171,Ewan,Macpherson,bronze,QLD,Brisbane
+2172,Ingrid,Garcia,platinum,VIC,Ballarat
+2173,Freya,Zielinski,bronze,TAS,Hobart
+2174,Hassan,Cavanagh,gold,NSW,Albury
+2175,Emeka,Mbeki,gold,VIC,Melbourne
+2176,Caitlin,Cabrera,platinum,SA,Mount Gambier
+2177,Jia,Villanueva,gold,ACT,Canberra
+2178,Arjun,Keating,silver,NT,Alice Springs
+2179,Andrea,Bonnet,gold,ACT,Tuggeranong
+2180,Mohan,Sharma,bronze,TAS,Hobart
+2181,Nuala,Kovacs,bronze,ACT,Tuggeranong
+2182,Daniela,Cabrera,gold,SA,Whyalla
+2183,Caitlin,Macpherson,bronze,NT,Darwin
+2184,Diego,Bergstrom,bronze,VIC,Shepparton
+2185,Anders,Blackwood,silver,WA,Perth
+2186,Lucia,Petrov,bronze,SA,Mount Gambier
+2187,Ludwig,Kaminski,silver,NT,Palmerston
+2188,Tane,Hasegawa,silver,VIC,Mildura
+2189,Kiara,Silva,bronze,VIC,Ballarat
+2190,Andrea,Beauchamp,bronze,NT,Katherine
+2191,Hina,Kimura,bronze,ACT,Tuggeranong
+2192,Sofia,Beauchamp,bronze,QLD,Cairns
+2193,Ewan,Mbeki,silver,QLD,Rockhampton
+2194,Marcus,Zielinski,bronze,VIC,Ballarat
+2195,Jonas,Sinclair,bronze,ACT,Belconnen
+2196,Rohan,Farrell,bronze,WA,Albany
+2197,Esther,Papadopoulos,gold,SA,Mount Gambier
+2198,Xiulan,Rasmussen,gold,NT,Palmerston
+2199,Ruben,Halloran,gold,TAS,Devonport
+2200,Hassan,Chen,bronze,QLD,Brisbane
+2201,Giulia,Jaganathan,silver,ACT,Belconnen
+2202,Eleni,Fitzgerald,bronze,QLD,Brisbane
+2203,Diego,Zielinski,bronze,TAS,Launceston

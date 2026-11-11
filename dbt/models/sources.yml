@@ -1,0 +1,20 @@
+version: 2
+
+sources:
+  - name: bronze
+    database: CDC_LAB
+    schema: BRONZE
+    description: Written by the Snowflake Kafka connector (Terraform creates the table).
+    tables:
+      - name: transaction_raw
+        identifier: TRANSACTION_RAW
+        description: One row per Kafka event (Iceberg v3); last 7 days.
+
+  - name: hist
+    database: CDC_LAB
+    schema: HIST
+    description: Batch path input, loaded from S3 by the `load_raw_events` macro (scripts/run-batch.sh).
+    tables:
+      - name: raw_events
+        identifier: RAW_EVENTS
+        description: Same shape as bronze (RECORD_METADATA, RECORD_CONTENT) plus FILE_NAME; full history.

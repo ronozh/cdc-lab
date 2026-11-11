@@ -1,0 +1,45 @@
+name: cdc_lab
+version: "1.0.0"
+config-version: 2
+profile: cdc_lab
+
+model-paths: ["models"]
+macro-paths: ["macros"]
+seed-paths: ["seeds"]
+test-paths: ["tests"]
+clean-targets: ["target", "dbt_packages"]
+
+# One transformation logic (macros/cdc.sql), two paths:
+#   realtime/  dynamic Iceberg tables (Snowflake storage), last 7 days, refreshed by Snowflake
+#   batch/     plain tables, full history from S3, rebuilt by a daily `dbt build`
+#   recon/     views comparing the two paths (tests fail on any difference)
+models:
+  cdc_lab:
+    realtime:
+      +materialized: dynamic_table
+      +snowflake_warehouse: CDC_WH
+      +table_format: iceberg
+      +external_volume: SNOWFLAKE_MANAGED   # Snowflake storage, no bucket (see macros/snowflake_managed_iceberg.sql)
+      +refresh_mode: INCREMENTAL            # fail at create time rather than silently fall back to full refreshes
+      silver:
+        +schema: SILVER
+        +target_lag: downstream             # refresh only when gold needs it
+      gold:
+        +schema: GOLD
+        +target_lag: 1 minute
+    batch:
+      +schema: HIST
+      +materialized: table
+      +tags: ["batch"]
+    recon:
+      +schema: RECON
+      +materialized: view
+      +tags: ["recon"]
+
+seeds:
+  cdc_lab:
+    +schema: REF
+    customer:
+      +column_types: {customer_id: integer}
+    product:
+      +column_types: {product_id: integer}

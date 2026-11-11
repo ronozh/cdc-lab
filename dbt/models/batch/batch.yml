@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: hist_transaction
+    description: HIST.TRANSACTION - latest state per transaction_id, full history from S3 (rebuilt by each batch run).
+    columns:
+      - name: transaction_id
+        data_tests: [unique, not_null]
+
+  - name: hist_transaction_enriched
+    description: HIST.TRANSACTION_ENRICHED - HIST.TRANSACTION + customer tier + product type.
+    columns:
+      - name: transaction_id
+        data_tests: [unique, not_null]
+      - name: customer_tier
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments: {values: ['platinum', 'gold', 'standard']}

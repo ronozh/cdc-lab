@@ -20,15 +20,24 @@ resource "snowflake_execute" "bronze_table" {
     COMMENT = 'cdc-lab: raw Debezium events from cdc.public.transaction (Kafka connector v4)'
   SQL
   revert  = "DROP TABLE IF EXISTS ${local.bronze_table}"
+
+  # Any change to `execute` would DROP + CREATE (= empty) bronze. Refuse; change the table with an ALTER resource instead.
+  lifecycle {
+    prevent_destroy = true
+  }
 }
 
-# Without error logging the v4 connector silently drops records it can't insert; with it they go to the error table.
-# Separate from the CREATE so changing it never recreates (= empties) bronze.
-resource "snowflake_execute" "bronze_error_logging" {
-  execute = "ALTER ICEBERG TABLE ${local.bronze_table} SET ERROR_LOGGING = TRUE"
-  revert  = "ALTER ICEBERG TABLE IF EXISTS ${local.bronze_table} SET ERROR_LOGGING = FALSE"
+# Separate from the CREATE so changing them never recreates (= empties) bronze.
+#   ERROR_LOGGING    without it the v4 connector silently drops records it can't insert
+#   CHANGE_TRACKING  dynamic tables (silver) read bronze incrementally; only the owner (SYSADMIN) can switch it on
+resource "snowflake_execute" "bronze_properties" {
+  execute = "ALTER ICEBERG TABLE ${local.bronze_table} SET ERROR_LOGGING = TRUE CHANGE_TRACKING = TRUE"
+  revert  = "ALTER ICEBERG TABLE IF EXISTS ${local.bronze_table} SET ERROR_LOGGING = FALSE CHANGE_TRACKING = FALSE"
 
   depends_on = [snowflake_execute.bronze_table]
+  lifecycle {
+    replace_triggered_by = [snowflake_execute.bronze_table] # a recreated table needs its properties again
+  }
 }
 
 # --- 7-day retention -------------------------------------------------------------
@@ -81,4 +90,7 @@ resource "snowflake_execute" "bronze_grants" {
   revert  = "SELECT 1" # dropping the table removes its grants
 
   depends_on = [snowflake_execute.bronze_table]
+  lifecycle {
+    replace_triggered_by = [snowflake_execute.bronze_table] # a recreated table needs its grants again
+  }
 }

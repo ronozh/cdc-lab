@@ -13,3 +13,8 @@ terraform/.terraform/
 # Kafka Connect plugin jars (connect/plugins/download.sh)
 connect/plugins/*/
 connect/plugins/.download/
+dbt/.venv/
+dbt/target/
+dbt/logs/
+dbt/dbt_packages/
+dbt/.user.yml

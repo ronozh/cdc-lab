@@ -1,0 +1,16 @@
+# No secrets here: account comes from .env (SNOWFLAKE_ACCOUNT), the private key stays in ~/.snowflake/keys.
+# Run dbt through scripts/dbt.sh, which loads .env and points dbt at this folder.
+cdc_lab:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: "{{ env_var('SNOWFLAKE_ACCOUNT') }}"
+      user: DBT_SVC
+      role: CDC_TRANSFORM
+      authenticator: snowflake_jwt
+      private_key_path: "{{ env_var('DBT_PRIVATE_KEY_PATH', env_var('HOME') ~ '/.snowflake/keys/cdclab_dbt_svc.p8') }}"
+      warehouse: CDC_WH
+      database: CDC_LAB
+      schema: SILVER    # default only; every folder sets its own schema
+      threads: 4
