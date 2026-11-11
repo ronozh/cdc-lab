@@ -1,4 +1,4 @@
-# Snowflake: TERRAFORM_SVC (key pair, created by bootstrap/snowflake/terraform_svc.sql).
+# Snowflake: TERRAFORM_SVC (key pair, created by terraform/bootstrap/terraform_svc.sql).
 # One alias per system role, so each object is created with the least role that can do it.
 locals {
   snowflake_auth = {

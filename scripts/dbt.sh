@@ -1,11 +1,7 @@
 #!/usr/bin/env bash
-# Run dbt for this project: loads .env, uses dbt/profiles.yml and the dbt/.venv install.
+# Run dbt for this project: settings from .env, dbt/profiles.yml.
+# dbt runs in its own environment, made and cached by uv (kept apart from the project's packages, which it conflicts with).
 # Usage: scripts/dbt.sh build --select realtime        (any dbt command)
-# One-time install: uv venv dbt/.venv --python 3.13 && uv pip install -p dbt/.venv -r dbt/requirements.txt
 set -euo pipefail
-cd "$(dirname "$0")/.."
-
-set -a; source .env; set +a      # SNOWFLAKE_ACCOUNT (and the rest of .env)
-unset SNOWFLAKE_PASSWORD         # key-pair only
-cd dbt
-exec .venv/bin/dbt "$@" --profiles-dir .
+source "$(dirname "$0")/_env.sh"
+exec uvx --python 3.13 --from dbt-core==1.12.6 --with dbt-snowflake==1.12.4 dbt "$@" --project-dir dbt --profiles-dir dbt

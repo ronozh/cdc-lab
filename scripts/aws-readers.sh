@@ -1,18 +1,17 @@
 #!/usr/bin/env bash
 # AWS readers of gold through Horizon Catalog: Lambda + PyIceberg, EMR Serverless + PySpark, SageMaker + PyIceberg.
-# Infrastructure: terraform/aws_readers.tf. Needs: AWS_PROFILE, scripts/build-lambda.sh run once.
+# Infrastructure: terraform/readers/ (its own stack). Needs: AWS_PROFILE, scripts/build-lambda.sh run once.
 # Usage: scripts/aws-readers.sh <command>
 #   (first time: off, key, on: the notebook instance needs the key at its first start)
 #   on         terraform apply with the hourly-billed parts: NAT gateway (EMR) + notebook instance (SageMaker)
 #   off        terraform apply without them (Lambda, EMR application, VPC, bucket, secret stay: no idle cost)
 #   key        put READER_SVC's private key into Secrets Manager (once, and after a key rotation)
 #   lambda     invoke the function, print its JSON summary
-#   emr        run spark/read_table.py on EMR Serverless, print the driver output            (needs: on)
+#   emr        run readers/spark_read.py on EMR Serverless, print the driver output            (needs: on)
 #   sagemaker  print the result of the notebook that the instance runs at every start        (needs: on)
 set -euo pipefail
-cd "$(dirname "$0")/.."
-export AWS_REGION="${AWS_REGION:-ap-southeast-2}"
-tf() { env -u SNOWFLAKE_PASSWORD terraform -chdir=terraform "$@"; }
+source "$(dirname "$0")/_env.sh"
+tf() { scripts/tf.sh readers "$@"; }
 out() { tf output -raw "$1"; }
 TABLE="${TABLE:-GOLD.TRANSACTION_ENRICHED}"
 
@@ -22,7 +21,7 @@ case "${1:-}" in
 
   key)
     aws secretsmanager put-secret-value --secret-id "$(out reader_key_secret)" \
-      --secret-string "file://${HORIZON_KEY_FILE:-$HOME/.snowflake/keys/cdclab_reader_svc.p8}" --query VersionId --output text ;;
+      --secret-string "file://$HORIZON_KEY_FILE" --query VersionId --output text ;;
 
   lambda)
     tmp=$(mktemp); trap 'rm -f "$tmp"' EXIT
@@ -35,7 +34,7 @@ case "${1:-}" in
     nat=$(aws ec2 describe-nat-gateways --filter Name=tag:Name,Values=cdc-lab-readers Name=state,Values=available --query 'length(NatGateways)' --output text)
     [[ "$nat" != 0 ]] || { echo "no NAT gateway: the job could not reach Horizon. Run: $0 on" >&2; exit 1; }
     env_conf=""                                                   # driver environment: where Horizon is, where the key is
-    for kv in SNOWFLAKE_ACCOUNT="$(out snowflake_account)" HORIZON_ROLE=CDC_READER HORIZON_SECRET_ID="$(out reader_key_secret)" \
+    for kv in SNOWFLAKE_ACCOUNT="$SNOWFLAKE_ACCOUNT" HORIZON_SECRET_ID="$(out reader_key_secret)" \
               AWS_REGION="$AWS_REGION" AWS_DEFAULT_REGION="$AWS_REGION"; do
       env_conf+=" --conf spark.emr-serverless.driverEnv.$kv"
     done
@@ -48,7 +47,7 @@ case "${1:-}" in
     params+=" --conf spark.driver.cores=1 --conf spark.driver.memory=2g --conf spark.executor.cores=1 --conf spark.executor.memory=2g$env_conf"
     job=$(aws emr-serverless start-job-run --application-id "$app" --execution-role-arn "$(out emr_job_role_arn)" \
       --name "read-$TABLE" --execution-timeout-minutes 15 \
-      --job-driver "$(jq -n --arg e "s3://$bucket/spark/read_table.py" --arg t "$TABLE" --arg p "$params" \
+      --job-driver "$(jq -n --arg e "s3://$bucket/readers/spark_read.py" --arg t "$TABLE" --arg p "$params" \
         '{sparkSubmit: {entryPoint: $e, entryPointArguments: [$t, "5"], sparkSubmitParameters: $p}}')" \
       --configuration-overrides "$(jq -n --arg l "s3://$bucket/output/emr/" '{monitoringConfiguration: {s3MonitoringConfiguration: {logUri: $l}}}')" \
       --query jobRunId --output text)
@@ -64,7 +63,7 @@ case "${1:-}" in
     fi ;;
 
   sagemaker)
-    bucket=$(out artifacts_bucket); name=cdc-lab-readers
+    bucket=$(out artifacts_bucket); name=$(out notebook_instance)
     aws sagemaker wait notebook-instance-in-service --notebook-instance-name $name   # the start script has begun: old result removed
     echo "waiting for the start script's result (up to 10 min) ..."
     for _ in $(seq 1 60); do

@@ -19,6 +19,10 @@ import time
 from datetime import datetime, time as day_start, timedelta
 from zoneinfo import ZoneInfo
 
+ACCOUNT = os.environ["SNOWFLAKE_ACCOUNT"]
+USER = os.environ.get("HORIZON_USER", "READER_SVC")
+ROLE = os.environ.get("HORIZON_ROLE", "CDC_READER")
+CATALOG_URI = f"https://{ACCOUNT}.snowflakecomputing.com/polaris/api/catalog"
 DATABASE = "CDC_LAB"
 GOLD = "GOLD.TRANSACTION_ENRICHED"
 COLUMNS = ("COMMITTED_AT", "CUSTOMER_TIER", "PRODUCT_TYPE", "NET_AMOUNT")  # all the summary needs
@@ -47,7 +51,7 @@ def _rsa(key_pem: bytes):
 def mint_jwt(account: str, user: str, key_pem: bytes, lifetime_s: int = 3600, rsa=_rsa) -> str:
     """Snowflake key-pair JWT (RS256). Horizon exchanges it for an access token.
 
-    `rsa` does the RSA work; Spark jobs pass one that uses the JVM (spark/read_table.py), so they need no Python package.
+    `rsa` does the RSA work; Spark jobs pass one that uses the JVM (readers/spark_read.py), so they need no Python package.
     """
     public_der, sign = rsa(key_pem)
     fingerprint = "SHA256:" + base64.b64encode(hashlib.sha256(public_der).digest()).decode()
@@ -68,17 +72,15 @@ def catalog():
     """PyIceberg REST catalog on Horizon. The JWT is the OAuth client secret; data access uses vended S3 credentials."""
     from pyiceberg.catalog import load_catalog
 
-    account = os.environ["SNOWFLAKE_ACCOUNT"]
-    uri = f"https://{account}.snowflakecomputing.com/polaris/api/catalog"
     return load_catalog(
         "horizon",
         **{
             "type": "rest",
-            "uri": uri,
+            "uri": CATALOG_URI,
             "warehouse": DATABASE,  # the Snowflake database, not a warehouse
-            "credential": mint_jwt(account, os.environ.get("HORIZON_USER", "READER_SVC"), private_key_pem()),
-            "oauth2-server-uri": f"{uri}/v1/oauth/tokens",
-            "scope": f"session:role:{os.environ.get('HORIZON_ROLE', 'CDC_READER')}",
+            "credential": mint_jwt(ACCOUNT, USER, private_key_pem()),
+            "oauth2-server-uri": f"{CATALOG_URI}/v1/oauth/tokens",
+            "scope": f"session:role:{ROLE}",
             "header.X-Iceberg-Access-Delegation": "vended-credentials",
         },
     )

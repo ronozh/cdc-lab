@@ -96,7 +96,7 @@ services: # each entry = one container
       AWS_REGION: ap-southeast-2 #   bucket region
       AWS_ACCESS_KEY_ID: ${S3_SINK_ACCESS_KEY_ID:-} #   IAM user cdc-lab-s3-sink (AWS SDK default credential chain)
       AWS_SECRET_ACCESS_KEY: ${S3_SINK_SECRET_ACCESS_KEY:-}
-    volumes: # sink plugins, downloaded by connect/plugins/download.sh; each folder under /kafka/connect = one plugin
+    volumes: # sink plugins, downloaded by scripts/download-plugins.sh; each folder under /kafka/connect = one plugin
       - ./connect/plugins/snowflake:/kafka/connect/snowflake-kafka-connector:ro
       - ./connect/plugins/s3:/kafka/connect/kafka-connect-s3:ro
     healthcheck: # "healthy" = the REST API answers

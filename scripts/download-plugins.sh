@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # Download Kafka Connect sink plugins (pinned versions) into connect/plugins/<plugin>/.
 # The folders are gitignored and mounted into the connect container (docker-compose.yml).
-# Usage: connect/plugins/download.sh      (safe to re-run: existing files are kept)
+# Usage: scripts/download-plugins.sh      (safe to re-run: existing files are kept)
 set -euo pipefail
-cd "$(dirname "$0")"
+cd "$(dirname "$0")/../connect/plugins"
 
 MAVEN=https://repo1.maven.org/maven2
 

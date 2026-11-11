@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Build the Lambda package: build/lambda.zip = PyIceberg + PyArrow + cryptography (Linux arm64 wheels) + our two files.
-# Terraform uploads it (terraform/aws_readers.tf). boto3 is already in the Lambda runtime.
+# Terraform uploads it (terraform/readers/lambda.tf). boto3 is already in the Lambda runtime.
 # Usage: scripts/build-lambda.sh
 set -euo pipefail
 cd "$(dirname "$0")/.."

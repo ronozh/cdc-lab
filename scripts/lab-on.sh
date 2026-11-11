@@ -2,11 +2,11 @@
 # Turn the lab back on (after scripts/lab-off.sh):
 #   - start the Docker stack and wait until healthy (connectors resume from their saved offsets)
 #   - resume the dynamic tables and the purge task
-# The traffic generator is started by you:  uv run python src/generator.py
+# The traffic generator is started by you:  uv run python source/generator.py
 # Usage: scripts/lab-on.sh
 set -euo pipefail
-cd "$(dirname "$0")/.."
-SNOW="env -u SNOWFLAKE_PASSWORD snow sql -c ${SNOW_CONNECTION:-cdclab_terraform}"   # TERRAFORM_SVC, role SYSADMIN
+source "$(dirname "$0")/_env.sh"
+SNOW="snow sql -c $SNOW_CONNECTION"   # TERRAFORM_SVC, role SYSADMIN
 
 echo "== Docker"
 docker compose up -d --wait
@@ -30,4 +30,4 @@ $SNOW -q "
 " > /dev/null 2>&1 || echo "WARN: could not resume (check: snow sql -c cdclab_terraform -q 'show dynamic tables in database CDC_LAB')"
 $SNOW -q "SHOW DYNAMIC TABLES IN DATABASE CDC_LAB" --format json 2>/dev/null | jq -r '.[] | "  \(.schema_name).\(.name): \(.scheduling_state)"'
 
-echo "Next: uv run python src/generator.py   (traffic), scripts/check-local.sh   (local health)"
+echo "Next: uv run python source/generator.py   (traffic), scripts/check-local.sh   (local health)"

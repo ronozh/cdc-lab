@@ -1,6 +1,6 @@
 -- Service user that Terraform authenticates as. Run once, as a human ACCOUNTADMIN, in a Snowsight worksheet
 -- (a trial account has no SAML IdP, so `snow --authenticator externalbrowser` doesn't work). Fill in the key first:
---   grep -v '^--' bootstrap/snowflake/terraform_svc.sql | sed "s|<% pubkey %>|$PUBKEY|" | pbcopy   (see phase 4)
+--   grep -v '^--' terraform/bootstrap/terraform_svc.sql | sed "s|<% pubkey %>|$PUBKEY|" | pbcopy   (see phase 4)
 --
 -- TYPE = SERVICE: no password, no MFA, no Snowsight UI. Key-pair only.
 -- Roles: SYSADMIN (objects), SECURITYADMIN (roles, users, grants),

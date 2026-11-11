@@ -4,13 +4,13 @@
 *.pub
 __pycache__/
 # Terraform: local config, state, provider cache
-terraform/terraform.tfvars
-terraform/backend.hcl
-terraform/.terraform/
+terraform/*/terraform.tfvars
+terraform/core/backend.hcl
+terraform/*/.terraform/
 *.tfstate
 *.tfstate.*
 
-# Kafka Connect plugin jars (connect/plugins/download.sh)
+# Kafka Connect plugin jars (scripts/download-plugins.sh)
 connect/plugins/*/
 connect/plugins/.download/
 dbt/.venv/
@@ -19,3 +19,6 @@ dbt/logs/
 dbt/dbt_packages/
 dbt/.user.yml
 build/
+
+# Docs are kept local (not published)
+doc/

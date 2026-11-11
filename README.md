@@ -22,42 +22,45 @@ flowchart LR
 | AWS ap-southeast-2 | S3 raw bucket, IAM; readers of gold: Lambda, EMR Serverless, SageMaker notebook (Terraform) |
 | Snowflake | CDC_LAB database: Iceberg tables on Snowflake storage, dynamic tables, batch tables, reconciliation (Terraform + dbt) |
 
-## Docs
-| Read | For |
-|---|---|
-| [doc/guide.md](doc/guide.md) | **Start here:** how the system works and a step-by-step walk through it, following one event end to end |
-| [doc/plan/overview.md](doc/plan/overview.md) | Design: components, decisions, data layers, phases |
-| [doc/plan/manual/](doc/plan/manual/README.md) | How it was built, one phase per doc, every command explained |
-
 ## Repository layout
+Top-level folders follow the pipeline, left to right.
 ```
+source/                   generator.py (OLTP traffic: 80% insert / 20% status update), sql/ (table DDL)
 docker-compose.yml        Postgres, Kafka, Kafka Connect (local)
-src/generator.py          OLTP traffic: 80% insert / 20% status update
-sql/postgres/             source table DDL
-connect/                  connector configs (JSON) + plugins/download.sh (sink jars, gitignored)
-terraform/                one stack: AWS (S3, IAM) + Snowflake (warehouse, DB, roles, users, bronze, stage)
-bootstrap/snowflake/      one-time SQL: TERRAFORM_SVC
+connect/                  connector configs (JSON); plugins/ (sink jars, gitignored)
+terraform/core/           S3 raw bucket, IAM + Snowflake: warehouse, database, roles, users, bronze, batch stage
+terraform/readers/        optional AWS readers of gold (own state): Lambda, EMR Serverless, SageMaker
+terraform/bootstrap/      one-time SQL: TERRAFORM_SVC
 dbt/                      seeds (dims), macros (the shared logic), models realtime/ batch/ recon/
-spark/                    read Iceberg tables through Horizon (Spark in Docker, EMR Serverless)
-readers/                  PyIceberg through Horizon: shared module, Streamlit dashboard, Lambda handler, SageMaker notebook
-scripts/                  connect-apply, check-local, dbt, run-batch, lab-on, lab-off, dashboard, build-lambda, aws-readers
-doc/                      guide, plan, phase docs
+readers/                  read gold through Horizon: horizon.py (shared), Streamlit dashboard, Lambda handler,
+                          Spark job (local Docker + EMR), SageMaker notebook
+scripts/                  every command of the lab; _env.sh = shared settings from .env
+Makefile                  the entry points: `make` lists them
 ```
+
+## Settings
+One place: `.env` (copy `.env.example`). Every script loads it through `scripts/_env.sh`; `scripts/tf.sh` passes it to Terraform, so there is no `terraform.tfvars`.
 
 ## Daily use
 ```bash
 export AWS_PROFILE=dpivoted            # AWS SSO (aws sso login --profile dpivoted)
-scripts/lab-on.sh                      # Docker up, connectors resume, dynamic tables + purge task resume
-uv run python src/generator.py         # traffic (second terminal)
-scripts/check-local.sh                 # local health: Postgres → Debezium → Kafka
-scripts/run-batch.sh                   # batch path + reconciliation (all S3 files not loaded yet)
-spark/read.sh GOLD.TRANSACTION_ENRICHED
-scripts/dashboard.sh                   # Streamlit: today's sales (http://localhost:8501)
-scripts/aws-readers.sh on              # AWS readers: then lambda | emr | sagemaker, and off when done (hourly cost while on)
-scripts/lab-off.sh                     # stop spending: generator, dynamic tables, task, Docker (data kept)
+make on                                # Docker up, connectors resume, dynamic tables + purge task resume
+make traffic                           # traffic generator (second terminal)
+make check                             # local health: Postgres → Debezium → Kafka
+make batch                             # batch path + reconciliation (all S3 files not loaded yet)
+make spark                             # Spark (Docker) reads gold through Horizon
+make dashboard                         # Streamlit: today's sales (http://localhost:8501)
+make off                               # stop spending: generator, dynamic tables, task, Docker (data kept)
 ```
-
-Terraform needs `build/lambda.zip` to plan: run `scripts/build-lambda.sh` once after cloning.
+AWS readers (optional; the NAT gateway and the notebook bill per hour while on):
+```bash
+make lambda-zip                        # once: build/lambda.zip
+scripts/tf.sh readers init             # once
+scripts/aws-readers.sh off             # first apply: everything without hourly cost
+scripts/aws-readers.sh key             # once: READER_SVC's private key → Secrets Manager
+make readers-on readers-test readers-off
+```
+Terraform: `scripts/tf.sh core plan` / `scripts/tf.sh readers plan` (any Terraform command).
 
 ## Security (public repo)
-No secrets, keys, state or account identifiers in git. They live in gitignored `.env`, `terraform/terraform.tfvars`, `terraform/backend.hcl`, and `~/.snowflake/keys/`. Snowflake access is key-pair only (`TYPE = SERVICE` users). On AWS, the reader key is in Secrets Manager (not in Terraform state).
+No secrets, keys, state or account identifiers in git. They live in gitignored `.env`, `terraform/core/backend.hcl`, and `~/.snowflake/keys/`. Snowflake access is key-pair only (`TYPE = SERVICE` users). On AWS, the reader key is in Secrets Manager (not in Terraform state).
