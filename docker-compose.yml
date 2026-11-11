@@ -90,6 +90,15 @@ services: # each entry = one container
       PG_USER: ${PG_USER} # passed in from .env, read by the connector via ${env:...}
       PG_PASSWORD: ${PG_PASSWORD}
       PG_DB: ${PG_DB}
+      SF_URL: ${SF_URL:-} # Snowflake sink (phase 5): account endpoint
+      SF_PRIVATE_KEY: ${SF_PRIVATE_KEY:-} #   KAFKA_SVC private key body
+      S3_RAW_BUCKET: ${S3_RAW_BUCKET:-} # S3 sink (phase 6): target bucket
+      AWS_REGION: ap-southeast-2 #   bucket region
+      AWS_ACCESS_KEY_ID: ${S3_SINK_ACCESS_KEY_ID:-} #   IAM user cdc-lab-s3-sink (AWS SDK default credential chain)
+      AWS_SECRET_ACCESS_KEY: ${S3_SINK_SECRET_ACCESS_KEY:-}
+    volumes: # sink plugins, downloaded by connect/plugins/download.sh; each folder under /kafka/connect = one plugin
+      - ./connect/plugins/snowflake:/kafka/connect/snowflake-kafka-connector:ro
+      - ./connect/plugins/s3:/kafka/connect/kafka-connect-s3:ro
     healthcheck: # "healthy" = the REST API answers
       test: ["CMD-SHELL", "curl -fs localhost:8083/ > /dev/null"]
       interval: 10s

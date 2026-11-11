@@ -3,3 +3,13 @@
 *.p8
 *.pub
 __pycache__/
+# Terraform: local config, state, provider cache
+terraform/terraform.tfvars
+terraform/backend.hcl
+terraform/.terraform/
+*.tfstate
+*.tfstate.*
+
+# Kafka Connect plugin jars (connect/plugins/download.sh)
+connect/plugins/*/
+connect/plugins/.download/
