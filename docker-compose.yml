@@ -4,14 +4,22 @@
 #        ├─ container: cdc-postgres   (throwaway: can be deleted and recreated anytime)
 #        │    └─ /var/lib/postgresql/data  ← Postgres writes its files here
 #        │                 ▲ mounted
-#        └─ volume: cdc-lab_pgdata    (persistent: lives on independently of the container)
+#        ├─ volume: cdc-lab_pgdata    (persistent: lives on independently of the container)
+#        ├─ container: cdc-kafka
+#        │    └─ /var/lib/kafka/data       ← topics (events + Connect state) live here
+#        │                 ▲ mounted
+#        └─ volume: cdc-lab_kafkadata (persistent)
 #
 #   The container is the process; the volume is the disk. Delete the container and the data stays.
+#   `docker compose down` keeps volumes; `docker compose down -v` deletes them (= full reset).
+
+name: cdc-lab # project name: fixes volume names (cdc-lab_pgdata, cdc-lab_kafkadata) whatever the folder is called
 
 services: # each entry = one container
   postgres: # service name; other containers reach it at hostname "postgres"
     image: postgres:17 # pinned major version; Debezium supports 17
     container_name: cdc-postgres # fixed name, shown in `docker ps`
+    restart: unless-stopped # come back after a Docker Desktop restart, unless you stopped it yourself
     environment: # used only on first start (empty volume): creates user (superuser) + database
       POSTGRES_USER: ${PG_USER} # ${...} filled from .env
       POSTGRES_PASSWORD: ${PG_PASSWORD}
@@ -20,11 +28,24 @@ services: # each entry = one container
       - "5432:5432" # host:container. Mac localhost:5432 → container port 5432 (how the generator connects)
     volumes: # USE volumes: <volume or path>:<path inside container>
       - pgdata:/var/lib/postgresql/data # bare name = named volume (Docker-managed). "./pgdata:..." would be a bind mount (folder in this repo)
-    command: ["postgres", "-c", "wal_level=logical"]
+    command:
+      - postgres
+      - -c
+      - wal_level=logical # logical decoding, needed by Debezium
+      - -c
+      - max_slot_wal_keep_size=2GB # safety cap: a slot may hold at most 2 GB of WAL; beyond that it is invalidated instead of filling the disk
+    healthcheck: # "healthy" = accepts TCP connections; other services wait for this
+      test: ["CMD-SHELL", "pg_isready -h 127.0.0.1 -U ${PG_USER} -d ${PG_DB}"] # -h: TCP, so the socket-only init server on first start doesn't count
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
   kafka:
     image: apache/kafka:4.3.1 # official Apache image; KRaft mode (no ZooKeeper)
     container_name: cdc-kafka
+    restart: unless-stopped
     environment:
+      CLUSTER_ID: 5L6g3nShT-eMCtK--X86sw # fixed cluster id (the image default, made explicit); must match the id stored in the volume
       KAFKA_NODE_ID: 1
       KAFKA_PROCESS_ROLES: broker,controller # one node does both jobs: stores data + manages cluster metadata
       KAFKA_LISTENERS: PLAINTEXT://:9092,CONTROLLER://:9093 # ports it listens on inside the container
@@ -35,12 +56,26 @@ services: # each entry = one container
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1 # single broker → internal topics can only have 1 copy
       KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
       KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
-    # no ports: only containers talk to Kafka. No volume: data lives in the container (kept by stop/start, lost by down)
+      KAFKA_LOG_DIRS: /var/lib/kafka/data # where topics are stored (image default is /tmp/kafka-logs, inside the container = lost on `down`)
+    volumes:
+      - kafkadata:/var/lib/kafka/data # topics survive `docker compose down`
+    # no ports: only containers talk to Kafka
+    healthcheck: # "healthy" = the broker answers API requests
+      test: ["CMD-SHELL", "/opt/kafka/bin/kafka-broker-api-versions.sh --bootstrap-server localhost:9092 > /dev/null 2>&1"]
+      interval: 10s
+      timeout: 15s
+      retries: 20
+      start_period: 20s
 
   connect:
     image: quay.io/debezium/connect:3.7 # Kafka Connect + Debezium connectors preinstalled
     container_name: cdc-connect
-    depends_on: [kafka, postgres] # start order only (doesn't wait for "ready")
+    restart: unless-stopped
+    depends_on: # wait until both are healthy, not just started
+      kafka:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
     ports:
       - "8083:8083" # REST API: how you manage connectors from the Mac
     environment:
@@ -49,11 +84,19 @@ services: # each entry = one container
       CONFIG_STORAGE_TOPIC: _connect_configs # Connect keeps its state in Kafka topics:
       OFFSET_STORAGE_TOPIC: _connect_offsets #   connector configs, source offsets (Debezium's WAL position),
       STATUS_STORAGE_TOPIC: _connect_status #   connector/task status
+      OFFSET_FLUSH_INTERVAL_MS: 5000 # save source offsets every 5s (default 60s): fewer replayed events after a crash
       CONNECT_CONFIG_PROVIDERS: env # allow ${env:VAR} in connector configs, so no secrets in JSON files
       CONNECT_CONFIG_PROVIDERS_ENV_CLASS: org.apache.kafka.common.config.provider.EnvVarConfigProvider
       PG_USER: ${PG_USER} # passed in from .env, read by the connector via ${env:...}
       PG_PASSWORD: ${PG_PASSWORD}
       PG_DB: ${PG_DB}
+    healthcheck: # "healthy" = the REST API answers
+      test: ["CMD-SHELL", "curl -fs localhost:8083/ > /dev/null"]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+      start_period: 30s
 
 volumes: # DECLARE named volumes (Docker creates them; real name gets the project prefix: cdc-lab_pgdata)
   pgdata: # empty = default options. Kept on `docker compose down`; deleted by `down -v`
+  kafkadata: # Kafka topics, including Connect's state topics (_connect_*)

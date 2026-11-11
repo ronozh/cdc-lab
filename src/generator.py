@@ -1,6 +1,7 @@
 """Simulate OLTP traffic on public.transaction: 80% insert, 20% update, one action every N seconds."""
 import os
 import random
+import sys
 import time
 from datetime import datetime
 from decimal import Decimal, ROUND_HALF_UP
@@ -15,6 +16,7 @@ DSN = (
     f"dbname={os.environ['PG_DB']} user={os.environ['PG_USER']} password={os.environ['PG_PASSWORD']}"
 )
 INTERVAL_SEC = float(os.getenv('GEN_INTERVAL_SEC', '10'))
+RETRY_SEC = 5  # wait between reconnect attempts
 
 # Weights roughly match the sample CSVs.
 PAYMENT_METHODS = ['credit_card', 'debit_card', 'paypal', 'buy_now_pay_later', 'bank_transfer', 'gift_card']
@@ -74,7 +76,7 @@ def update(conn) -> None:
         )
         found = cur.fetchone()
         if not found:
-            print("UPDATE skipped: no updatable rows yet")
+            print(f"{datetime.now():%H:%M:%S} UPDATE skipped: no updatable rows yet")
             return
         txn_id, old = found
         new = random.choice(TRANSITIONS[old])
@@ -84,13 +86,22 @@ def update(conn) -> None:
 
 def main() -> None:
     print(f"Connecting to {os.getenv('PG_HOST', 'localhost')}:{os.getenv('PG_PORT', '5432')}, one action every {INTERVAL_SEC}s. Ctrl+C to stop.")
-    with psycopg.connect(DSN) as conn:
-        while True:
-            insert(conn) if random.random() < 0.8 else update(conn)
-            time.sleep(INTERVAL_SEC)
+    while True:  # reconnect loop: survives a Postgres restart
+        try:
+            # autocommit: no implicit transaction is left open between actions; each `with conn.transaction()` block = one commit
+            with psycopg.connect(DSN, autocommit=True, connect_timeout=5) as conn:
+                print(f"{datetime.now():%H:%M:%S} connected")
+                while True:
+                    insert(conn) if random.random() < 0.8 else update(conn)
+                    time.sleep(INTERVAL_SEC)
+        except psycopg.OperationalError as e:
+            reason = (str(e).strip().splitlines() or [type(e).__name__])[0]  # first line of the error
+            print(f"{datetime.now():%H:%M:%S} connection lost: {reason}; retrying in {RETRY_SEC}s")
+            time.sleep(RETRY_SEC)
 
 
 if __name__ == '__main__':
+    sys.stdout.reconfigure(line_buffering=True)  # print each line immediately, also when output goes to a file
     try:
         main()
     except KeyboardInterrupt:
