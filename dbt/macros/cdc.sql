@@ -31,18 +31,16 @@
         RECORD_CONTENT:after:channel::string                          as channel,
         RECORD_CONTENT:after:status::string                           as status
     from {{ relation }}
-    where RECORD_CONTENT:after is not null                            -- deletes (after = null) are not generated
+    where RECORD_CONTENT:op::string in ('r', 'c', 'u')                -- deletes ('d') are not generated; skip them if they appear
 {%- endmacro %}
 
 {#-
   Current state: the latest event per transaction. Newest LSN wins; Kafka offset breaks ties, which also
   removes Debezium's at-least-once duplicates (same LSN, same content).
-  `where`: optional filter applied before picking (the real-time path keeps 7 days).
 -#}
-{% macro latest_per_transaction(events, where=none) -%}
+{% macro latest_per_transaction(events) -%}
     select *
     from {{ events }}
-    {% if where %}where {{ where }}{% endif %}
     qualify row_number() over (partition by transaction_id order by lsn desc, kafka_offset desc) = 1
 {%- endmacro %}
 

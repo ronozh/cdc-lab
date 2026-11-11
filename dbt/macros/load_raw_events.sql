@@ -8,7 +8,7 @@
   - Idempotent: COPY remembers loaded files (64 days), so re-running a day loads only new files.
 -#}
 {% macro load_raw_events(day=none) %}
-    {%- set table = 'CDC_LAB.HIST.RAW_EVENTS' -%}
+    {%- set table = source('hist', 'raw_events') -%}
     {%- set path = '' -%}
     {%- if day -%}
         {%- set d = modules.datetime.date.fromisoformat(day) -%}

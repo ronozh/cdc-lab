@@ -32,12 +32,9 @@ resource "snowflake_execute" "bronze_table" {
 #   CHANGE_TRACKING  dynamic tables (silver) read bronze incrementally; only the owner (SYSADMIN) can switch it on
 resource "snowflake_execute" "bronze_properties" {
   execute = "ALTER ICEBERG TABLE ${local.bronze_table} SET ERROR_LOGGING = TRUE CHANGE_TRACKING = TRUE"
-  revert  = "ALTER ICEBERG TABLE IF EXISTS ${local.bronze_table} SET ERROR_LOGGING = FALSE CHANGE_TRACKING = FALSE"
+  revert  = "SELECT 1" # never switch change tracking off: the dynamic tables depend on it
 
   depends_on = [snowflake_execute.bronze_table]
-  lifecycle {
-    replace_triggered_by = [snowflake_execute.bronze_table] # a recreated table needs its properties again
-  }
 }
 
 # --- 7-day retention -------------------------------------------------------------
@@ -90,7 +87,4 @@ resource "snowflake_execute" "bronze_grants" {
   revert  = "SELECT 1" # dropping the table removes its grants
 
   depends_on = [snowflake_execute.bronze_table]
-  lifecycle {
-    replace_triggered_by = [snowflake_execute.bronze_table] # a recreated table needs its grants again
-  }
 }

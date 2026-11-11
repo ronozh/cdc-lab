@@ -2,19 +2,17 @@
   RECON.RECON_GOLD_DIFFS: transactions where real-time gold and batch gold disagree (expected: no rows).
   Compared: transactions whose latest event lies inside the shared offset range, and for which real-time
   has nothing newer than the batch has seen (newer events are expected, not a difference).
+  Whole rows are compared (hash(*)): both golds come from the same macro, so columns line up.
 -#}
-{%- set compared = "status, customer_tier, product_type, event_ts, quantity, unit_price, discount_pct,
-                    gross_amount, net_amount, margin_amount, payment_method, channel" -%}
-
 with rng as (
     select * from {{ ref('recon_range') }}
 ),
 realtime as (
-    select transaction_id, kafka_offset, hash({{ compared }}) as row_hash
+    select transaction_id, kafka_offset, hash(*) as row_hash
     from {{ ref('gold_transaction_enriched') }}
 ),
 batch as (
-    select transaction_id, kafka_offset, hash({{ compared }}) as row_hash
+    select transaction_id, kafka_offset, hash(*) as row_hash
     from {{ ref('hist_transaction_enriched') }}
 ),
 paired as (

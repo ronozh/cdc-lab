@@ -49,7 +49,7 @@ export AWS_PROFILE=dpivoted            # AWS SSO (aws sso login --profile dpivot
 scripts/lab-on.sh                      # Docker up, connectors resume, dynamic tables + purge task resume
 uv run python src/generator.py         # traffic (second terminal)
 scripts/check-local.sh                 # local health: Postgres → Debezium → Kafka
-scripts/run-batch.sh [YYYY-MM-DD|all]  # batch path + reconciliation (default: yesterday UTC)
+scripts/run-batch.sh                   # batch path + reconciliation (all S3 files not loaded yet)
 spark/read.sh GOLD.TRANSACTION_ENRICHED
 scripts/lab-off.sh                     # stop spending: generator, dynamic tables, task, Docker (data kept)
 ```

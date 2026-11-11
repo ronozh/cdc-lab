@@ -5,7 +5,7 @@
 -#}
 
 {% macro _drop_base_location(ddl) -%}
-    {%- if "SNOWFLAKE_MANAGED" in ddl | upper -%}
+    {%- if (config.get('external_volume') or '') | upper == 'SNOWFLAKE_MANAGED' -%}
         {{ modules.re.sub("base_location\\s*=\\s*'[^']*'", "", ddl, flags=modules.re.IGNORECASE) }}
     {%- else -%}
         {{ ddl }}
