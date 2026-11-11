@@ -1,0 +1,3 @@
+# AWS readers (Lambda package, SageMaker notebook). Local: uv run --group readers ...
+pyiceberg[pyarrow]==0.12.0
+cryptography==50.0.2

@@ -1,0 +1,34 @@
+#!/bin/bash
+# SageMaker notebook instance start script (runs as root). See aws_readers.tf.
+set -eu
+cat > /home/ec2-user/run-readers.sh <<'SCRIPT'
+#!/bin/bash
+# Fetch the notebook, install PyIceberg into the python3 environment, execute the notebook, store the result in S3.
+set -eu
+exec > /home/ec2-user/run-readers.log 2>&1
+out=s3://${bucket}/output/sagemaker
+aws s3 rm "$out/" --recursive --only-show-errors --region ${region} || true   # no stale result from the previous start
+# The last log line tells scripts/aws-readers.sh how it went: DONE or FAILED.
+trap 's=$?; [ $s -eq 0 ] || echo FAILED; aws s3 cp /home/ec2-user/run-readers.log "$out/run-readers.log" --only-show-errors --region ${region}' EXIT
+dir=/home/ec2-user/SageMaker/cdc-lab
+mkdir -p "$dir" && cd "$dir"
+aws s3 cp s3://${bucket}/readers/ . --recursive --only-show-errors --region ${region}
+cat > horizon.env <<ENV
+%{ for k, v in env ~}
+${k}=${v}
+%{ endfor ~}
+AWS_DEFAULT_REGION=${region}
+ENV
+set +u # conda's activate scripts read unset variables
+source /home/ec2-user/anaconda3/bin/activate python3
+set -u
+python --version
+python -m pip install --quiet --disable-pip-version-check -r requirements.txt
+# Jupyter itself runs on another Python, so run the notebook on a kernel that is this environment for sure.
+python -m ipykernel install --user --name cdc-lab --display-name "cdc-lab (python3 env)"
+jupyter nbconvert --to notebook --execute read_gold.ipynb --output read_gold.executed.ipynb --ExecutePreprocessor.kernel_name=cdc-lab
+aws s3 cp read_gold.executed.ipynb s3://${bucket}/output/sagemaker/read_gold.executed.ipynb --only-show-errors --region ${region}
+echo DONE
+SCRIPT
+chmod +x /home/ec2-user/run-readers.sh
+sudo -u ec2-user nohup /home/ec2-user/run-readers.sh > /dev/null 2>&1 &

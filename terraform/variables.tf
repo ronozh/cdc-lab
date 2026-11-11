@@ -31,3 +31,15 @@ variable "credit_quota" {
   type        = number
   default     = 25
 }
+
+variable "aws_readers_on" {
+  description = "Create the hourly-billed parts of the AWS readers: NAT gateway (EMR Serverless) and SageMaker notebook instance. scripts/aws-readers.sh on | off."
+  type        = bool
+  default     = false
+}
+
+variable "emr_release_label" {
+  description = "EMR Serverless release (Spark 3.5 + bundled Iceberg runtime)."
+  type        = string
+  default     = "emr-7.14.0"
+}

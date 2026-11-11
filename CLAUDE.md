@@ -1,7 +1,6 @@
 # cdc-lab
-Postgres → Debezium → Kafka → Snowflake bronze → dynamic tables (silver/gold).
+Postgres → Debezium → Kafka → S3 raw + Snowflake Iceberg bronze → dynamic tables (silver/gold) + daily dbt batch + reconciliation.
 
-- User runs all commands. Claude only writes docs/code, never runs commands.
 - Responses: very very concise.
 - Plans: `doc/plan/manual/`, one doc per phase, every command commented.
 - No secrets in git (public repo).

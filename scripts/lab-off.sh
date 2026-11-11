@@ -3,6 +3,7 @@
 #   - stop the traffic generator
 #   - suspend the dynamic tables (no more refreshes → CDC_WH auto-suspends after 60 s) and the purge task
 #   - stop the Docker stack (Postgres, Kafka, Connect)
+#   - warn if the AWS readers (phase 11) are still on
 # Usage: scripts/lab-off.sh          Undo: scripts/lab-on.sh
 set -uo pipefail
 cd "$(dirname "$0")/.."
@@ -20,6 +21,13 @@ $SNOW -q "
 
 echo "== Docker"
 docker compose stop
+
+echo "== AWS readers (hourly-billed: NAT gateway, notebook instance)"
+if nat=$(aws ec2 describe-nat-gateways --region "${AWS_REGION:-ap-southeast-2}" --filter Name=tag:Name,Values=cdc-lab-readers Name=state,Values=pending,available --query 'length(NatGateways)' --output text 2>/dev/null); then
+  [[ "$nat" == 0 ]] && echo "off" || echo "WARN: still ON and billing. Run: scripts/aws-readers.sh off"
+else
+  echo "WARN: could not check (AWS login?). If you ran 'scripts/aws-readers.sh on', run: scripts/aws-readers.sh off"
+fi
 
 echo "== state"
 $SNOW -q "SHOW DYNAMIC TABLES IN DATABASE CDC_LAB" --format json 2>/dev/null | jq -r '.[] | "  \(.schema_name).\(.name): \(.scheduling_state)"'

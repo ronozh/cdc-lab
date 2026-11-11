@@ -6,3 +6,11 @@ dependencies = [
     "psycopg[binary]>=3.3.8",
     "python-dotenv>=1.2.4",
 ]
+
+[dependency-groups]
+readers = [
+    "boto3>=1.44.0",
+    "cryptography>=46",
+    "pyiceberg[pyarrow]>=0.12",
+    "streamlit>=1.67",
+]
